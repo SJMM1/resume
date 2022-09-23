@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sujin</title>
+
+    <script src="./js/prefixfree.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+
+    <!--[if lt IE 9]>
+        <script src="./js/html5shiv.js"></script>        
+    <![endif]-->
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="./js/jquery.rwdImageMaps.min.js"></script>
+    <script src="./js/turn.min.js"></script>
+</head>
+<body>
+    <section class="container">
+        <article class="box">
+            <div class="room room1">
+                <img src="./img/about.jpg" alt="1번방" usemap="#about">
+                <map name="about">
+                    <area coords="5010,1204,818" shape="circle">
+                </map>
+                <div class="maparea about"></div>
+            </div>
+            <div class="items"></div>
+        </article>
+        <article class="box">
+            <div class="room room2">
+                <img src="./img/skill.jpg" alt="2번방">         
+            </div>
+            <div class="items"></div>
+        </article>
+        <article class="box">
+            <div class="room room3">
+                <img src="./img/gallery.jpg" alt="3번방" usemap="#gallery">
+                <map name="gallery" id="gallery">
+                    <area coords="2495,1245,2693,1245,2758,1239,2837,1454,2781,1478,2702,1478,2501,1481" shape="poly">
+                </map>
+                <div class="book_wrap">
+                    <a href="#" class="book_close">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="items"></div>
+        </article>
+        <article class="box">
+            <div class="room room4">
+                <img src="./img/contact.jpg" alt="4번방">
+            </div>
+            <div class="items"></div>
+        </article>
+    </section>
+    <script src="./js/index.js"></script>
+</body>
+</html>
