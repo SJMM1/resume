@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sujin</title>
+    <title>RESUME</title>
 
     <script src="./js/prefixfree.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
@@ -19,33 +19,93 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="./js/jquery.rwdImageMaps.min.js"></script>
     <script src="./js/turn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <section class="container">
         <article class="box">
             <div class="room room1">
-                <img src="./img/about.jpg" alt="1번방" usemap="#about">
-                <map name="about">
-                    <area coords="5010,1204,818" shape="circle">
-                </map>
-                <div class="maparea about"></div>
+                <img src="./img/about.jpg" alt="1번방">
+                <div class="maparea about">
+                    <span data-tooltip="click!"></span>
+                </div>
+                <div class="pop aboutBox">
+                    <a href="#" class="close">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                    </a>
+                    <div>
+                        <div class="center">
+                            <h1>About Me</h1>
+                            <div class="aboutimg">
+                                <img src="./img/me.png" alt="">
+                            </div>
+                            <div>
+                                <p>조 수 진</p>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <div class="right">
+                                <p>
+                                    자격증<br>
+                                    웹디자인기능사<br>
+                                    GTQ, GTQi 1급<br>
+                                    MOS - Word, PowerPoint, Excel<br>
+                                    2종보통운전면허<br>
+                                    ITQ - 엑셀, 파워포인트, 한글<br>
+                                    워드프로세서 3급<br>
+                                </p>
+                                <p>
+                                    교육<br>
+                                    2022 이젠아카데미 - 스마트 UIUX앱&웹디자인<br>
+                                    2017 더조은아카데미 - 빅데이터 분석을 위한 자바, 파이썬 개발<br>
+                                    * 데이터베이스 기술 수립 및 SQL 활용, 관리<br>
+                                    * Java, JSP, Servlet, JavaScript(Ajax, jQuery)<br>
+                                    * Framework - Spring, MyBatis<br>
+                                    * Database - Oracle, My SQL, MongoDB<br>
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    경력<br>
+                                    2018~2020 클립서비스<br>
+                                    * 뮤지컬, 공연 웹사이트 개발 및 유지보수<br>
+                                    * 관리자용(admin) 사이트 개발 및 유지보수<br><br>
+                                    2018 스타리<br>
+                                    * 웹사이트 퍼블리싱 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="items"></div>
         </article>
         <article class="box">
             <div class="room room2">
-                <img src="./img/skill.jpg" alt="2번방">         
+                <img src="./img/skill.jpg" alt="2번방">
+                <div class="maparea skill">
+                    <span data-tooltip="click!"></span>
+                </div>
+                <div class="pop skillBox">
+                    <a href="#" class="close">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                    </a>
+                    <div>
+                        <h1 class="blind">SKILL</h1>
+                        <!-- <canvas id="myChart"></canvas> -->
+                    </div>
+                </div>         
             </div>
             <div class="items"></div>
         </article>
         <article class="box">
             <div class="room room3">
-                <img src="./img/gallery.jpg" alt="3번방" usemap="#gallery">
-                <map name="gallery" id="gallery">
-                    <area coords="2495,1245,2693,1245,2758,1239,2837,1454,2781,1478,2702,1478,2501,1481" shape="poly">
-                </map>
-                <div class="book_wrap">
-                    <a href="#" class="book_close">
+                <img src="./img/portfolio.jpg" alt="3번방">
+                <div class="maparea portfolio">
+                    <span data-tooltip="click!"></span>
+                </div>
+                <div class="pop portfolioBox">
+                    <a href="#" class="close">
                         <i class="fa-solid fa-circle-xmark"></i>
                     </a>
                 </div>
