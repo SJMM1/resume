@@ -176,16 +176,17 @@ h1 {
 
 .room2 .skillBox {
     width: 90%;
-    height: 85%;
+    height: 90%;
     background: url('../img/tv_frame.png') no-repeat center center;
     background-size: 100% 100%;
 }
 .room2 .skillBox > div {
     position: absolute;
-    top: 7%;
+    padding-top: 5%;
+    top: 6.2%;
     left: 50%;
     width: 80%;
-    height: 67%;
+    height: 71%;
     transform: translateX(-50%);
     overflow-y: scroll;
 }
@@ -219,11 +220,60 @@ h1 {
     justify-content: center;
     align-items: center;
     height: 100%;
+    border: 1px solid #ddd;
+}
+.room3 .pageWrap h3 {
+    font-size: 25px;
 }
 .room3 .pageWrap img {
-    width: inherit;
+    width: 100%;
     height: auto;
+    position: relative;
 }
+.room3 .rwdP > div { 
+    position: relative;
+    width: 90%; 
+}
+.rwdT { position:absolute; bottom:70px; left:50px; }
+.rwdM { position:absolute; bottom:70px; right:50px; }
+
+.rwdP .overlay { 
+    position: absolute;
+    width: 92%;
+    height: 60%;
+    top: 4%;
+    left: 4%;
+    background: url('../img/pc_ver.png') no-repeat;
+    background-size: cover;
+    background-position: top center;
+    transition: all 3s;
+}
+
+.rwdT .overlay { 
+    position: absolute;
+    width: 90.2%;
+    height: 90.2%;
+    top: 3.7%;
+    left: 5%;
+    background: url('../img/tab_ver.png') no-repeat;
+    background-size: cover;
+    background-position: top center;
+    transition: all 3s;
+}
+.rwdM .overlay { 
+    position: absolute;
+    width: 87.3%;
+    height: 91.5%;
+    top: 3%;
+    left: 6%;
+    background: url('../img/mo_ver.png') no-repeat;
+    background-size: cover;
+    background-position: top center;
+    transition: all 3s;
+}
+.rwdP > div:hover .overlay { background-position:bottom center; }
+.rwdT:hover .overlay { background-position:bottom center; }
+.rwdM:hover .overlay { background-position:bottom center; }
 
 /*---------- room4 contact ----------*/
 .room4 .contact {
@@ -326,6 +376,7 @@ h1 {
 }
 .room4 form .btn .btn1:hover::after { transform: translateX(-9%) translateY(-25%) rotate(45deg); }
 
+.room4 .send_message,
 .room4 .thankyou_message {
     text-align: center;
     font-size: 20px;
