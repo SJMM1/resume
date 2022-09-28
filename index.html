@@ -90,10 +90,7 @@
                     <a href="#" class="close">
                         <i class="fa-solid fa-circle-xmark"></i>
                     </a>
-                    <div>
-                        <h1 class="blind">SKILL</h1>
-                        <!-- <canvas id="myChart"></canvas> -->
-                    </div>
+                    <div></div>             
                 </div>         
             </div>
             <div class="items"></div>
@@ -115,10 +112,64 @@
         <article class="box">
             <div class="room room4">
                 <img src="./img/contact.jpg" alt="4번방">
+                <div class="maparea contact">
+                    <span data-tooltip="click!"></span>
+                </div>
+                <div class="pop contactBox">
+                    <a href="#" class="close">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                    </a>
+                    <div>
+                        <h1>CONTACT ME!</h1>
+                        <form class="gform" method="post" action="https://script.google.com/macros/s/AKfycbyAihuRIBV2gKYPe6lzrjujfz2agTOmXUAQLBjGTA/exec">
+                            <table>
+                                <colgroup>
+                                    <col width="30%">
+                                    <col width="*">
+                                </colgroup>
+                                <tr>
+                                    <td>
+                                        <label for="name">이름</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="name" id="name">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="email">이메일</label>
+                                    </td>
+                                    <td>
+                                        <input type="email" name="email" id="email">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="hp">핸드폰번호</label>
+                                    </td>
+                                    <td>
+                                        <input type="tel" name="hp" id="hp" placeholder="-없이 숫자만 입력하세요.">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="message">메세지</label>
+                                    </td>
+                                    <td>
+                                        <textarea name="message" id="message"></textarea>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="formWrap"></div>
+                        </form>
+                    </div>
+                </div>
+                <iframe name='blankifr' style='display:none;'></iframe>
             </div>
             <div class="items"></div>
         </article>
     </section>
     <script src="./js/index.js"></script>
+    <script src="./js/mail.js"></script>
 </body>
 </html>

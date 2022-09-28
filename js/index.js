@@ -61,11 +61,6 @@ $('.maparea').on('click', function(){
     $(this).next().addClass('on')
     $(this).parent().append(`<div class='backcolor'></div>`)
     
-    // room1
-    if ($(this).hasClass('about')) {
-        
-    }
-
     // room2
     if ($(this).hasClass('skill')) {
         let chart = `<canvas id="skill"></canvas>`
@@ -169,10 +164,29 @@ $('.maparea').on('click', function(){
                 </div>
             </div>
             <div class="hard"></div>
-            <div>Page 1</div>
-            <div>Page 2</div>
-            <div>Page 3</div>
-            <div>Page 4</div>
+            <div>
+                <div class="pageWrap">
+                    <h3>홍루이젠 리뉴얼 - 반응형</h3>
+                </div>
+            </div>
+            <div>
+                <div class="pageWrap rwdP">
+                    <div class="overlay"></div>
+                    <img src="../img/imac.png" alt="imac">
+                </div>
+            </div>
+            <div>
+                <div class="pageWrap rwdT">
+                    <div class="overlay"></div>
+                    <img src="../img/ipad.png" alt="imac">
+                </div>
+            </div>
+            <div>
+                <div class="pageWrap rwdM">
+                    <div class="overlay"></div>
+                    <img src="../img/iphone.png" alt="imac">
+                </div>
+            </div>
             <div class="hard"></div>
             <div class="hard"></div>
         </div>`
@@ -183,7 +197,18 @@ $('.maparea').on('click', function(){
         });
     }
 
-    
+    // room4
+    if ($(this).hasClass('contact')) {
+        let msg = 
+        `<div class="formBox">
+            <div class="thankyou_message">연락주셔서 감사합니다. 빠른 시일 내에 답변 드리겠습니다 🚀</div>
+            <div class="btn">
+                <button type="submit" class="btn1"><span>보내기</spa></button>
+                <input type="reset" value="취소"></input>
+            </div>
+        </div>`
+        $('.formWrap').append(msg)
+    }
 })
 
 // 닫기
@@ -196,7 +221,11 @@ $('.close').on('click', function(){
     if ($(this).parent().parent().hasClass('room3')){
         $('#flipbook').remove()
     }
+    if ($(this).parent().parent().hasClass('room4')){
+        $('.formBox').remove()
+    }  
 })
+
 $('.close').hover(
     function(){
         $(this).addClass('fa-spin');
@@ -205,8 +234,5 @@ $('.close').hover(
         $(this).removeClass('fa-spin');
     }
 );
-
-
-
 
 	

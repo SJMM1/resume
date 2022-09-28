@@ -32,10 +32,6 @@ body {
     position: absolute;
     /* opacity: 0; */
 }
-.room .maparea:hover { 
-    opacity: 0.5;
-    background-color: #fff;
-}
 
 /* 툴팁 */
 [data-tooltip]::before,
@@ -52,15 +48,34 @@ body {
     padding: 5px 10px;
     border-radius: 5px;
     color: #fff; 
-    background: #025272;
-    box-shadow: 0 3px 8px #fff;
+    background: #f33f2f;
+    box-shadow: 5px 5px 7px #fff;
+    letter-spacing: 3px;
+    animation: beforeDown 0.5s infinite;
 }
 [data-tooltip]::after { 
     content: '';
     top: -20px;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid #025272;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid #f33f2f;
+    animation: afterDown 0.5s infinite;
+}
+@keyframes beforeDown {
+    0%{
+        top: -65px;
+    }
+    100%{
+        top: -60px;
+    }
+}
+@keyframes afterDown {
+    0%{
+        top: -25px;
+    }
+    100%{
+        top: -20px;
+    }
 }
 
 /* 팝업창 */
@@ -99,14 +114,17 @@ h1 {
 }
     
 /*---------- room1 about ----------*/
-.room1 .about{  
+.room1 .about {  
     width: 24.5%;
     height: 33%;
     top: 7.5%;
     right: 12.5%;
     border-radius: 50%;
 }
-.room1 .about:hover{ background: url('../img/me.jpg') no-repeat 50% 85%; }
+.room1 .about:hover { 
+    background: url('../img/me.jpg') no-repeat 50% 85%; 
+    opacity: 0.5;
+}
 
 .room1 .aboutBox {
     width: 90%;
@@ -124,7 +142,7 @@ h1 {
     transform: translate(-50%, -50%); 
     overflow-y: scroll;
 }
-.room1 .aboutBox .aboutimg img{
+.room1 .aboutBox .aboutimg img {
     width: 200px;
     height: 200px;
     margin: 0 auto;
@@ -134,21 +152,104 @@ h1 {
 
 /*---------- room2 skill ----------*/
 .room2 .skill {
-    width: 19%;
-    height: 16%;
-    top: 39%;
-    left: 44%;
-    border-radius: 5%;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 26% 100%, 25% 95%, 22% 90%, 17% 86%, 0 85%);
+    width: 24.2%;
+    height: 19.4%;
+    top: 32.6%;
+    right: 5.5%;
+}
+.room2 .skill:hover { 
+    background: url('../img/tv1.jpg') no-repeat;
+    background-size: 100% 100%; 
+    opacity: 0.5;
+    animation: tv 1s infinite;
+}
+@keyframes tv {
+    0% {
+        background: url('../img/tv1.jpg') no-repeat;
+        background-size: 100% 100%;
+    }
+    50% {
+        background: url('../img/tv2.jpg') no-repeat;
+        background-size: 100% 100%;
+    }
 }
 
 .room2 .skillBox {
     width: 90%;
     height: 85%;
-    background: url('../img/browser.png') no-repeat center center;
+    background: url('../img/tv_frame.png') no-repeat center center;
     background-size: 100% 100%;
 }
 .room2 .skillBox > div {
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    width: 80%;
+    height: 67%;
+    transform: translateX(-50%);
+    overflow-y: scroll;
+}
+
+/*---------- room3 portfolio ----------*/
+.room3 .portfolio {
+    width: 10.3%;
+    height: 10%;
+    top: 49.3%;
+    right: 14.9%;
+}
+.room3 .portfolio::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%; 
+    /* clip-path overflow:hidden 때문에 ::after사용 */
+    clip-path: polygon(0% 0%, 78% 0%, 100% 90%, 80% 98%, 0% 100%);
+}
+.room3 .portfolio:hover::after { background: rgba(255, 255, 255, 0.5); }
+
+
+.room3 .portfolioBox .hard { background: #fededf !important; }
+.room3 .portfolioBox .page { background: #fff; }
+.room3 .portfolioBox .hard h1 { 
+    margin-top: 100px;
+}
+
+.room3 .pageWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.room3 .pageWrap img {
+    width: inherit;
+    height: auto;
+}
+
+/*---------- room4 contact ----------*/
+.room4 .contact {
+    width: 19%;
+    height: 16%;
+    top: 39%;
+    left: 44%;
+}
+.room4 .contact::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%; 
+    border-radius: 5%;
+    /* clip-path overflow:hidden 때문에 ::after사용 */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 26% 100%, 25% 95%, 22% 90%, 17% 86%, 0 85%);
+}
+.room4 .contact:hover::after { background: rgba(255, 255, 255, 0.5); }
+
+.room4 .contactBox {
+    width: 90%;
+    height: 85%;
+    background: url('../img/browser.png') no-repeat center center;
+    background-size: 100% 100%;
+}
+.room4 .contactBox > div {
     position: absolute;
     top: 54%;
     left: 50%;
@@ -158,32 +259,85 @@ h1 {
     overflow-y: scroll;
 }
 
-
-/*---------- room3 portfolio ----------*/
-.room3 .portfolio {
-    width: 10.3%;
-    height: 10%;
-    top: 49.3%;
-    right: 14.9%;
-    clip-path: polygon(0% 0%, 78% 0%, 100% 90%, 80% 98%, 0% 100%);
+.room4 form { 
+    margin-top: 50px;
+}
+.room4 form table{ 
+    width: 90%;
+}
+.room4 form td { 
+    padding: 10px 0;
+    font-size: 20px; 
+}
+.room4 form td:first-child { text-align: right;}
+.room4 form td:first-child label { margin-right: 50px; }
+.room4 form input {
+    width: 100%;
+    padding: 10px;
+    height: 40px;
+    border: 1px solid #555;
+}
+.room4 form textarea {
+    width: 100%;
+    height: 200px;
+    border: 1px solid #555;
+    padding: 10px;
+    font-size: 15px; 
 }
 
-.room3 .portfolioBox .hard { background: #fededf !important; }
-.room3 .portfolioBox .page { background: #fff; }
-.room3 .portfolioBox .hard h1 { margin-top: 100px; }
+.room4 form .btn { 
+    text-align: center;
+    margin-top: 50px; 
+}
+.room4 form .btn .btn1,
+.room4 form .btn input {
+    border: none;
+    outline: none;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    background-color: #222;
+    padding: 17px 60px;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.20);
+    width: auto;
+    height: 50px;
+}
+.room4 form .btn .btn1 { margin-right: 20px; }
+.room4 form .btn input { background-color: rgb(156, 39, 39); }
+.room4 form .btn .btn1 span {
+    position: relative; 
+    z-index: 1;
+}
+.room4 form .btn .btn1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 490%;
+    width: 140%;
+    background: #78c7d2;
+    transition: all .5s ease-in-out;
+    transform: translateX(-98%) translateY(-25%) rotate(45deg);
+}
+.room4 form .btn .btn1:hover::after { transform: translateX(-9%) translateY(-25%) rotate(45deg); }
 
-
-
-
-/*---------- room4 contact ----------*/
-
+.room4 .thankyou_message {
+    text-align: center;
+    font-size: 20px;
+    display: none;
+}
 
 
 /* 고래이미지 */
 .scene {
     width: 500px;
     height: 500px;
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
