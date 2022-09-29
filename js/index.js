@@ -54,211 +54,217 @@ $('.box').on('mousewheel DOMMouseScroll', function(){
 
 $('img[usemap]').rwdImageMaps();
 
-// 팝업창
-$('.maparea').on('click', function(){
-    $(this).next().addClass('on')
+// room1 팝업창
+$('.maparea.about').on('click', function(){
+    $('.aboutBox').addClass('on')
     $(this).parent().append(`<div class='backcolor'></div>`)
     
-    // room1
-    if ($(this).hasClass('about')) {
-        $('.aboutBox').ripples({
-            resolution: 512,
-            dropRadius: 10,
-            perturbance: 0.0001
-        });
-    }
+    $('.aboutBox').ripples({
+        resolution: 512,
+        dropRadius: 10,
+        perturbance: 0.0001
+    });
+})
 
-    // room2
-    if ($(this).hasClass('skill')) {
-        let chart = `<canvas id="skill"></canvas>`
-        $('.skillBox > div').append(chart)
-        new Chart($('#skill'), {
-            type: 'polarArea',
-            data: {
-                labels: ['HTML', 'CSS', 'JavaScript', 'JQuery', 'PHOTOSHOP', 'ILLUSTRATOR'],
-                datasets: [{
-                    label: 'SKILL',
-                    data: [85, 75, 65, 70, 60, 60],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.3)',
-                        'rgba(54, 162, 235, 0.3)',
-                        'rgba(255, 206, 86, 0.3)',
-                        'rgba(75, 192, 192, 0.3)',
-                        'rgba(153, 102, 255, 0.3)',
-                        'rgba(255, 159, 64, 0.3)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    r: {
-                        pointLabels: {
-                            display: true,
-                            centerPointLabels: true,
-                            font: {
-                                size: 16,
-                                family: 'Gowun Dodum'
-                            }
-                        },
-                        // min: 0,
-                        // max: 100
-                        ticks : {
-                            backdropColor: 'rgba(255, 255, 255, 0)',
-                            font : {
-                                size: 16,
-                                family: 'Gowun Dodum'
-                            }
-                        }
-                    }
-                },
-                plugins: {
-                    legend: {
-                        position: 'top',
+// room2 팝업창
+$('.maparea.skill').on('click', function(){
+    $('.skillBox').addClass('on')
+    $(this).parent().append(`<div class='backcolor'></div>`)
+    
+    let chart = `<canvas id="skill"></canvas>`
+    $('.skillBox > div').append(chart)
+    new Chart($('#skill'), {
+        type: 'polarArea',
+        data: {
+            labels: ['HTML', 'CSS', 'JavaScript', 'JQuery', 'PHOTOSHOP', 'ILLUSTRATOR'],
+            datasets: [{
+                label: 'SKILL',
+                data: [85, 75, 65, 70, 60, 60],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.3)',
+                    'rgba(54, 162, 235, 0.3)',
+                    'rgba(255, 206, 86, 0.3)',
+                    'rgba(75, 192, 192, 0.3)',
+                    'rgba(153, 102, 255, 0.3)',
+                    'rgba(255, 159, 64, 0.3)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                r: {
+                    pointLabels: {
                         display: true,
-                        labels: {
-                            font: {
-                                size: 16,
-                                family: 'Gowun Dodum'
-                            }
+                        centerPointLabels: true,
+                        font: {
+                            size: 16,
+                            family: 'Gowun Dodum'
                         }
                     },
-                    title: {
-                        display: true,
-                        text: 'SKILL',
-                        font: {
-                            size: 50,
-                            weight: 'bold',
+                    // min: 0,
+                    // max: 100
+                    ticks : {
+                        backdropColor: 'rgba(255, 255, 255, 0)',
+                        font : {
+                            size: 16,
                             family: 'Gowun Dodum'
                         }
                     }
                 }
+            },
+            plugins: {
+                legend: {
+                    position: 'top',
+                    display: true,
+                    labels: {
+                        font: {
+                            size: 16,
+                            family: 'Gowun Dodum'
+                        }
+                    }
+                },
+                title: {
+                    display: true,
+                    text: 'SKILL',
+                    font: {
+                        size: 50,
+                        weight: 'bold',
+                        family: 'Gowun Dodum'
+                    }
+                }
             }
-        });
-    }
+        }
+    });
+})
 
-    // room3
-    if ($(this).hasClass('portfolio')) {
-        let book = 
-        `<div id="flipbook">
-            <div class="hard">
-                <div class="pageWrap">
-                    <h1>PORTFOLIO</h1>
-                    <div class="scene">
-                        <div class="upper">
-                        <div class="moon">
-                            <div class="crater1"></div>
-                            <div class="crater2"></div>
+// room3 팝업창
+$('.maparea.portfolio').on('click', function(){
+    $('.portfolioBox').addClass('on')
+    $(this).parent().append(`<div class='backcolor'></div>`)
+    
+    let book = 
+    `<div id="flipbook">
+        <div class="hard">
+            <div class="pageWrap">
+                <h1>PORTFOLIO</h1>
+                <div class="scene">
+                    <div class="upper">
+                    <div class="moon">
+                        <div class="crater1"></div>
+                        <div class="crater2"></div>
+                    </div>
+                    <div class="star1"></div>
+                    <div class="star2"></div>
+                    <div class="star3"></div>
+                    <div class="cloud1">
+                        <div class="circle"></div>
+                        <div class="filler"></div>
+                    </div>
+                    <div class="cloud2">
+                        <div class="circle"></div>
+                        <div class="filler"></div>
+                    </div>
+                    <div class="tail">
+                        <div class="left"></div>
+                        <div class="right"></div>
+                        <div class="body"></div>
+                    </div>
+                    <div class="drop"></div>
+                    </div>
+                    <div class="lower">
+                    <div class="whale">
+                        <div class="eye"></div>
+                        <div class="detail1">
+                        <div class="detail2"></div>
                         </div>
-                        <div class="star1"></div>
-                        <div class="star2"></div>
-                        <div class="star3"></div>
-                        <div class="cloud1">
-                            <div class="circle"></div>
-                            <div class="filler"></div>
-                        </div>
-                        <div class="cloud2">
-                            <div class="circle"></div>
-                            <div class="filler"></div>
-                        </div>
-                        <div class="tail">
-                            <div class="left"></div>
-                            <div class="right"></div>
-                            <div class="body"></div>
-                        </div>
-                        <div class="drop"></div>
-                        </div>
-                        <div class="lower">
-                        <div class="whale">
-                            <div class="eye"></div>
-                            <div class="detail1">
-                            <div class="detail2"></div>
-                            </div>
-                        </div>
-                        <div class="fin"></div>
-                        </div>
+                    </div>
+                    <div class="fin"></div>
                     </div>
                 </div>
             </div>
-            <div class="hard"></div>
-            <div>
-                <div class="pageWrap">
-                    <div class="blockquote">
-                        <h2 class="center">홍루이젠<br>홈페이지<br>리뉴얼</h2>
-                        <p>홍루이젠 홈페이지의 메인 페이지와<br>서브 페이지(로그인, 회원가입, 메뉴)를<br>리뉴얼했습니다.<br>
-                        반응형으로 제작되었습니다.</p>
-                    </div>
-                    <button class="more_btn" onclick="window.open('https://sjmm1.github.io/hongruizhen/')"><span>Click!</span><span>바로가기</span></button>
+        </div>
+        <div class="hard"></div>
+        <div>
+            <div class="pageWrap">
+                <div class="blockquote">
+                    <h2 class="center">홍루이젠<br>홈페이지<br>리뉴얼</h2>
+                    <p>홍루이젠 홈페이지의 메인 페이지와<br>서브 페이지(로그인, 회원가입, 메뉴)를<br>리뉴얼했습니다.<br>
+                    반응형으로 제작되었습니다.</p>
+                </div>
+                <button class="more_btn" onclick="window.open('https://sjmm1.github.io/hongruizhen/')"><span>Click!</span><span>바로가기</span></button>
+            </div>
+        </div>
+        <div>
+            <div class="pageWrap">
+                <div class="rwdP rwd">
+                    <div class="overlay"></div>
+                    <img src="./img/imac.png" alt="imac">
+                </div>   
+            </div>
+        </div>
+        <div>
+            <div class="pageWrap">
+                <div class="rwdT rwdTM rwd">
+                    <div class="overlay"></div>
+                    <img src="./img/ipad.png" alt="ipad">
+                </div>
+                <div class="rwdM rwdTM rwd">
+                    <div class="overlay"></div>
+                    <img src="./img/iphone.png" alt="iphone">
                 </div>
             </div>
-            <div>
-                <div class="pageWrap">
-                    <div class="rwdP rwd">
-                        <div class="overlay"></div>
-                        <img src="./img/imac.png" alt="imac">
-                    </div>   
-                </div>
-            </div>
-            <div>
-                <div class="pageWrap">
-                    <div class="rwdT rwdTM rwd">
-                        <div class="overlay"></div>
-                        <img src="./img/ipad.png" alt="ipad">
-                    </div>
-                    <div class="rwdM rwdTM rwd">
-                        <div class="overlay"></div>
-                        <img src="./img/iphone.png" alt="iphone">
-                    </div>
-                </div>
-            </div>
-            <div>
-                
-            </div>
-            <div class="hard"></div>
-            <div class="hard"></div>
-        </div>`
-        $('.portfolioBox').append(book)
-        $('#flipbook').turn({
-            width: $('.room3').width() * 0.85,
-            height: $('.room3').height() * 0.85
-        });
-    }
+        </div>
+        <div>
+            
+        </div>
+        <div class="hard"></div>
+        <div class="hard"></div>
+    </div>`
+    $('.portfolioBox').append(book)
+    $('#flipbook').turn({
+        width: $('.room3').width() * 0.85,
+        height: $('.room3').height() * 0.85
+    });
+})
 
-    // room4
-    if ($(this).hasClass('contact')) {
-        let msg = 
-        `<div class="formBox">
-            <div class="send_message">메일을 보내고 있습니다.</div>
-            <div class="thankyou_message">연락주셔서 감사합니다. 빠른 시일 내에 답변 드리겠습니다 🚀</div>
-            <div class="btn">
-                <button type="submit" class="btn1"><span>보내기</span></button>
-                <input type="reset" value="취소"></input>
-            </div>
-        </div>`
-        $('.formWrap').append(msg)
-        
-        // $('.btn1').on('click', function(){
-        //     $('.send_message').css({display:"block"})
-        //     $.ajax({
-        //         type: "POST",
-        //         url: 'https://script.google.com/macros/s/AKfycbyAihuRIBV2gKYPe6lzrjujfz2agTOmXUAQLBjGTA/exec',          
-        //         success: function() {
-        //             $('.send_message').css({display:"none"})
-        //         },
-        //         error: function() {
-        //             alert('Error occured');
-        //         }
-        //     });
-        // })
-    }
+// room4 팝업창
+$('.maparea.contact').on('click', function(){
+    $('.contactBox').addClass('on')
+    $(this).parent().append(`<div class='backcolor'></div>`)
+    
+    let msg = 
+    `<div class="formBox">
+        <div class="send_message">메일을 보내고 있습니다.</div>
+        <div class="thankyou_message">연락주셔서 감사합니다. 빠른 시일 내에 답변 드리겠습니다 🚀</div>
+        <div class="btn">
+            <button type="submit" class="btn1"><span>보내기</span></button>
+            <input type="reset" value="취소"></input>
+        </div>
+    </div>`
+    $('.formWrap').append(msg)
+    
+    // $('.btn1').on('click', function(){
+    //     $('.send_message').css({display:"block"})
+    //     $.ajax({
+    //         type: "POST",
+    //         url: 'https://script.google.com/macros/s/AKfycbzK6EsHzUldAq71aGELFy57ffCpg0TvKT5WxIqg2qL9TrnNXx95/exec',          
+    //         success: function() {
+    //             $('.send_message').css({display:"none"})
+    //         },
+    //         error: function() {
+    //             alert('Error occured');
+    //         }
+    //     });
+    // })
 })
 
 // 닫기
@@ -286,3 +292,26 @@ $('.close').hover(
 );
 
 	
+// 아이템
+$('.key').on('click', function(){
+    $(this).parent().append(`<div class='back'></div>`)
+    $(this).parent().append(`<div class='pBox'></div>`)
+    let msg = `<p>열쇠를 발견했다.<br><span><닫기></span></p>`
+    $('.pBox').append(msg)
+    $('.itemBox .item1').append(`<img src="./img/key.png" alt="key">`)
+    $('.pBox').on('click', function(){
+        $(this).remove()
+        $('.back').remove() 
+    })
+    $(this).off()
+})
+$('.empty1').on('click', function(){
+    $(this).parent().append(`<div class='back'></div>`)
+    $(this).parent().append(`<div class='pBox'></div>`)
+    let msg = `<p>아무것도 들어있지 않다.<br><span><닫기></span></p>`
+    $('.pBox').append(msg)
+    $('.pBox').on('click', function(){
+        $(this).remove()
+        $('.back').remove()
+    })
+})

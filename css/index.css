@@ -12,16 +12,6 @@ body {
 }
 
 .room { position: relative; }
-.items {
-    position: fixed;
-    border: 1px solid #000;
-    width: 300px;
-    height: 100vh;
-    top: 0;
-    right: 0;
-    background-color: #fff;
-}
-
 .room img { 
     width: 100%;
     height: 100vh;
@@ -120,6 +110,34 @@ h3 {
     font-size: 30px;
     font-weight: bold; 
 }
+
+/* 아이템 문구 */
+.pBox {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 22px;
+    width: calc(100% - 350px);
+    height: 20%;
+    padding: 30px 0;
+    text-align: center;
+    cursor: pointer;
+}
+.pBox span {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.3);
+}
+.back {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0);
+}
     
 /*---------- room1 about ----------*/
 .room1 .about {  
@@ -133,19 +151,44 @@ h3 {
     background: url('../img/me.jpg') no-repeat 50% 85%; 
     opacity: 0.5;
 }
+.room1 .key {  
+    width: 15%;
+    height: 20%;
+    bottom: 15%;
+    left: 14.7%;
+    border-radius: 50%;
+}
+.room1 .key:hover { background: rgba(255, 255, 255, 0.5); }
+.room1 .empty1 {  
+    width: 12.8%;
+    height: 14.4%;
+    bottom: 28%;
+    left: 39.8%;
+}
+.room1 .empty1:hover { background: rgba(255, 255, 255, 0.5); }
 
 .room1 .aboutBox {
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     background: url('../img/mirror.png') no-repeat center center;
     background-size: contain;
+    font-size: 20px;
 }
+.aboutBox .close {
+    color: #fff;
+    font-size: 35px;
+    position: absolute;
+    bottom: 90%;
+    left: 90%;
+    z-index: 1;
+}
+.room1 .aboutBox p span { font-weight: bold; }
 
 .room1 .aboutBox > div {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 58%;
+    width: 50%;
     height: 87%;
     transform: translate(-50%, -50%);
     overflow-y: scroll;
@@ -153,40 +196,40 @@ h3 {
     padding: 5%;
 }
 .room1 .aboutBox .aboutimg img {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
+    width: 250px;
+    height: 250px;
+    margin: 20px auto 0;
 }
 
-
-
-
-
 .room1 .aboutBox .squared div {
-    width:14em;
+    width:200px;
     position:relative;
-    margin:0 0 4em 2em;
+    margin:10px 0 40px 40px;
     padding:0.2em 0.4em;
     transform: rotate(10deg);
     transform-origin: 0% 0%;
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 25px;
 }
 .room1 .aboutBox .squared div.blue {
     color: rgb(18, 150, 240);
-    border: 0.2em solid rgb(18, 150, 240);
+    border: 2px solid rgb(18, 150, 240);
 }
 .room1 .aboutBox .squared div.red {
     color: rgb(255, 54, 74);
-    border: 0.2em solid rgb(255, 54, 74);
+    border: 2px solid rgb(255, 54, 74);
 }
 .room1 .aboutBox .squared div.yellow {
     color:rgb(255, 174, 63);
-    border: 0.2em solid rgb(255, 174, 63);
+    border: 2px solid rgb(255, 174, 63);
 }
 .room1 .aboutBox .squared div.green {
     color: rgb(0, 162, 97);
-    border: 0.2em solid rgb(0, 162, 97);
+    border: 2px solid rgb(0, 162, 97);
+}
+.room1 .aboutBox .squared p {
+    padding: 20px 0 35px;
+    line-height: 35px;
 }
 
 /*---------- room2 skill ----------*/
@@ -432,28 +475,12 @@ h3 {
     justify-content: center;
     align-items: center;
     top: 0;
-    animation: move 1s infinite;
-    transition: all 1s;
+    animation: scale 1s infinite;
 }
-@keyframes move {
-    0% {
-        justify-content: flex-start;
-        align-items: flex-end;  
-        font-size: 65px;
-        animation-timing-function: ease-out;
-    }
-    50% {
-        justify-content: center;
-        align-items: center;
-        font-size: 50px;
-        animation-timing-function: ease-in-out;
-    }
-    100% {
-        justify-content: flex-end;
-        align-items: flex-start;
-        font-size: 35px;
-        animation-timing-function: ease-in;
-    }
+@keyframes scale {
+    0% { font-size: 50px; }
+    50% { font-size: 60px; }
+    100% { font-size: 50px; }
 }
 
 .room4 .contactBox {
@@ -470,6 +497,7 @@ h3 {
     height: 75%;
     transform: translate(-50%, -50%); 
     overflow-y: scroll;
+    padding: 30px 0 60px
 }
 
 .room4 form { 
@@ -546,7 +574,35 @@ h3 {
     display: none;
 }
 
+/*---------- Items ----------*/
+.items {
+    position: fixed;
+    width: 350px;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+.items > div { padding: 20px }
 
+.items .itemBox {
+    width: 100%;
+    height: 100%;
+    display: flex; 
+}
+.items .itemBox > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.items .itemBox > div > div {
+    flex: 1;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+}
 
 
 

@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/animate.css">
 
     <!--[if lt IE 9]>
         <script src="./js/html5shiv.js"></script>        
@@ -20,7 +21,7 @@
     <script src="./js/jquery.rwdImageMaps.min.js"></script>
     <script src="./js/turn.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script data-cfasync="false" type="text/javascript" src="form-submission-handler.js"></script>
+    <script data-cfasync="false" type="text/javascript" src="./js/form-submission-handler.js"></script>
     <script src="./js/jquery.ripples-min.js"></script>
 </head>
 <body>
@@ -31,6 +32,8 @@
                 <div class="maparea about">
                     <span data-tooltip="click!"></span>
                 </div>
+                <div class="maparea key"></div>
+                <div class="maparea empty1"></div>
                 <div class="pop aboutBox">
                     <a href="#" class="close">
                         <i class="fa-solid fa-circle-xmark"></i>
@@ -46,54 +49,44 @@
                                     PROFILE
                                 </div>
                                 <p>
-                                    
+                                    <span>NAME</span> : 조수진<br>
+                                    <span>E-MAIL</span> : ksd2356@naver.com<br>
+                                    <span>PHONE</span> : 010.6333.2952<br> 
                                 </p>
                                 <div class="red">
                                     LICENSE
                                 </div>
                                 <p>
-                                    
+                                    <span>2022.09</span>&nbsp;&nbsp;웹디자인기능사 필기<br>
+                                    <span>2012.12</span>&nbsp;&nbsp;MOS - Word, PowerPoint, Excel<br>
+                                    <span>2009.03</span>&nbsp;&nbsp;ITQ - 엑셀, 파워포인트, 한글<br>
+                                    <span>2003.12</span>&nbsp;&nbsp;워드프로세서 3급<br>
                                 </p>
                                 <div class="yellow">
                                     EDUCATION
                                 </div>
+                                <p>
+                                    <span>2022.06 ~ 2022.11</span><br>
+                                    스마트 UIUX 앱&웹디자인<br> 
+                                    - 안양 이젠컴퓨터아카데미<br><br>
+                                    <span>2017.09 ~ 2018.03</span><br>
+                                    빅데이터 분석을 위한 자바, 파이썬 개발<br>
+                                    - 강남 더조은컴퓨터아카데미<br>
+                                </p>
                                 <div class="green">
                                     WORK
                                 </div>
+                                <p>
+                                    <span>2018.05 ~ 2020.02</span><br>
+                                    클립서비스<br> 
+                                    - 뮤지컬/공연 웹사이트 개발 및 유지보수<br>
+                                    - 관리자(Admin) 사이트 개발 및 유지보수<br><br>
+                                    <span>2018.03 ~ 2018.04</span><br>
+                                    쉐어링스타리<br>
+                                    - 비트와이드 홈페이지 퍼블리싱<br>
+                                </p>
                             </div>
                         </div>
-                        <!-- <div class="info">
-                            <div class="right">
-                                <p>
-                                    자격증<br>
-                                    웹디자인기능사<br>
-                                    GTQ, GTQi 1급<br>
-                                    MOS - Word, PowerPoint, Excel<br>
-                                    2종보통운전면허<br>
-                                    ITQ - 엑셀, 파워포인트, 한글<br>
-                                    워드프로세서 3급<br>
-                                </p>
-                                <p>
-                                    교육<br>
-                                    2022 이젠아카데미 - 스마트 UIUX앱&웹디자인<br>
-                                    2017 더조은아카데미 - 빅데이터 분석을 위한 자바, 파이썬 개발<br>
-                                    * 데이터베이스 기술 수립 및 SQL 활용, 관리<br>
-                                    * Java, JSP, Servlet, JavaScript(Ajax, jQuery)<br>
-                                    * Framework - Spring, MyBatis<br>
-                                    * Database - Oracle, My SQL, MongoDB<br>
-                                </p>
-                            </div>
-                            <div>
-                                <p>
-                                    경력<br>
-                                    2018~2020 클립서비스<br>
-                                    * 뮤지컬, 공연 웹사이트 개발 및 유지보수<br>
-                                    * 관리자용(admin) 사이트 개발 및 유지보수<br><br>
-                                    2018 스타리<br>
-                                    * 웹사이트 퍼블리싱 
-                                </p>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -177,14 +170,6 @@
                                 </tr>
                             </table>
                             <div class="formWrap">
-                                <!-- <div class="formBox">
-                                    <div class="send_message">메일을 보내고 있습니다.</div>
-                                    <div class="thankyou_message">연락주셔서 감사합니다. 빠른 시일 내에 답변 드리겠습니다 🚀</div>
-                                    <div class="btn">
-                                        <button type="submit" class="btn1"><span>보내기</span></button>
-                                        <input type="reset" value="취소"></input>
-                                    </div>
-                                </div> -->
                             </div>
                         </form>
                     </div>
@@ -192,7 +177,25 @@
             </div>
         </article>
     </section>
-    <div class="items"></div>
+    <div class="items">
+        <div>
+            <h2 class="center">ITEM</h2>
+        </div>
+        <div class="itemBox">
+            <div>
+                <div class="item1"></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
     <script src="./js/index.js"></script>
 </body>
 </html>
