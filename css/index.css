@@ -1,775 +1,407 @@
-@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+@charset "utf-8";
 
-/*---------- 공통 ----------*/
-body { 
-    height: '100vh'; 
-    -ms-overflow-style: none;
-    font-family: 'Gowun Dodum', sans-serif;
-}
-::-webkit-scrollbar {
-    display: none;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.room { position: relative; }
-.items {
-    position: fixed;
-    border: 1px solid #000;
-    width: 300px;
-    height: 100vh;
-    top: 0;
-    right: 0;
-    background-color: #fff;
+a {
+    text-decoration: none;
+    color: black;
 }
 
-.room img { 
-    width: 100%;
-    height: 100vh;
-}
-
-/* 이미지맵 */
-.room .maparea { 
-    cursor: pointer;
-    position: absolute;
-    /* opacity: 0; */
-}
-
-/* 툴팁 */
-[data-tooltip]::before,
-[data-tooltip]::after {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 20px;
-}
-[data-tooltip]::before { 
-    content: attr(data-tooltip);
-    top: -60px;
-    height: 30px;
-    padding: 5px 10px;
-    border-radius: 5px;
-    color: #fff; 
-    background: #f33f2f;
-    box-shadow: 5px 5px 7px #fff;
-    letter-spacing: 3px;
-    animation: beforeDown 0.5s infinite;
-}
-[data-tooltip]::after { 
-    content: '';
-    top: -20px;
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-top: 7px solid #f33f2f;
-    animation: afterDown 0.5s infinite;
-}
-@keyframes beforeDown {
-    0%{
-        top: -65px;
-    }
-    100%{
-        top: -60px;
-    }
-}
-@keyframes afterDown {
-    0%{
-        top: -25px;
-    }
-    100%{
-        top: -20px;
-    }
-}
-
-/* 팝업창 */
-.backcolor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-}
-.pop { 
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1; 
-}
-.pop.on { display: block; }
-.close {
-    color: #fff;
-    font-size: 35px;
-    position: absolute;
-    bottom: 100%;
-    left: 100%;
-    z-index: 1;
-}
-
-.center { text-align: center; }
-.right { text-align: right; }
-h1 { 
-    font-size: 50px;
-    text-align: center;
-    font-weight: bold;
-}
-    
-/*---------- room1 about ----------*/
-.room1 .about {  
-    width: 24.5%;
-    height: 33%;
-    top: 7.5%;
-    right: 12.5%;
-    border-radius: 50%;
-}
-.room1 .about:hover { 
-    background: url('../img/me.jpg') no-repeat 50% 85%; 
-    opacity: 0.5;
-}
-
-.room1 .aboutBox {
-    width: 90%;
-    height: 90%;
-    background: url('../img/mirror.png') no-repeat center center;
-    background-size: 100% 100%;
-}
-
-.room1 .aboutBox > div {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 75%;
-    height: 70%;
-    transform: translate(-50%, -50%); 
-    overflow-y: scroll;
-}
-.room1 .aboutBox .aboutimg img {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
-}
-.room1 .aboutBox .info { display: flex; }
-.room1 .aboutBox .info > div { flex: 1; }
-
-/*---------- room2 skill ----------*/
-.room2 .skill {
-    width: 24.2%;
-    height: 19.4%;
-    top: 32.6%;
-    right: 5.5%;
-}
-.room2 .skill:hover { 
-    background: url('../img/tv1.jpg') no-repeat;
-    background-size: 100% 100%; 
-    opacity: 0.5;
-    animation: tv 1s infinite;
-}
-@keyframes tv {
-    0% {
-        background: url('../img/tv1.jpg') no-repeat;
-        background-size: 100% 100%;
-    }
-    50% {
-        background: url('../img/tv2.jpg') no-repeat;
-        background-size: 100% 100%;
-    }
-}
-
-.room2 .skillBox {
-    width: 90%;
-    height: 90%;
-    background: url('../img/tv_frame.png') no-repeat center center;
-    background-size: 100% 100%;
-}
-.room2 .skillBox > div {
-    position: absolute;
-    padding-top: 5%;
-    top: 6.2%;
-    left: 50%;
-    width: 80%;
-    height: 71%;
-    transform: translateX(-50%);
-    overflow-y: scroll;
-}
-
-/*---------- room3 portfolio ----------*/
-.room3 .portfolio {
-    width: 10.3%;
-    height: 10%;
-    top: 49.3%;
-    right: 14.9%;
-}
-.room3 .portfolio::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%; 
-    /* clip-path overflow:hidden 때문에 ::after사용 */
-    clip-path: polygon(0% 0%, 78% 0%, 100% 90%, 80% 98%, 0% 100%);
-}
-.room3 .portfolio:hover::after { background: rgba(255, 255, 255, 0.5); }
-
-
-.room3 .portfolioBox .hard { background: #fededf !important; }
-.room3 .portfolioBox .page { background: #fff; }
-.room3 .portfolioBox .hard h1 { 
-    margin-top: 100px;
-}
-
-.room3 .pageWrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    border: 1px solid #ddd;
-}
-.room3 .pageWrap h3 {
-    font-size: 25px;
-}
-.room3 .pageWrap img {
-    width: 100%;
-    height: auto;
+div {
     position: relative;
-}
-.room3 .rwdP > div { 
-    position: relative;
-    width: 90%; 
-}
-.rwdT { position:absolute; bottom:70px; left:50px; }
-.rwdM { position:absolute; bottom:70px; right:50px; }
-
-.rwdP .overlay { 
-    position: absolute;
-    width: 92%;
-    height: 60%;
-    top: 4%;
-    left: 4%;
-    background: url('../img/pc_ver.png') no-repeat;
-    background-size: cover;
-    background-position: top center;
-    transition: all 3s;
-}
-
-.rwdT .overlay { 
-    position: absolute;
-    width: 90.2%;
-    height: 90.2%;
-    top: 3.7%;
-    left: 5%;
-    background: url('../img/tab_ver.png') no-repeat;
-    background-size: cover;
-    background-position: top center;
-    transition: all 3s;
-}
-.rwdM .overlay { 
-    position: absolute;
-    width: 87.3%;
-    height: 91.5%;
-    top: 3%;
-    left: 6%;
-    background: url('../img/mo_ver.png') no-repeat;
-    background-size: cover;
-    background-position: top center;
-    transition: all 3s;
-}
-.rwdP > div:hover .overlay { background-position:bottom center; }
-.rwdT:hover .overlay { background-position:bottom center; }
-.rwdM:hover .overlay { background-position:bottom center; }
-
-/*---------- room4 contact ----------*/
-.room4 .contact {
-    width: 19%;
-    height: 16%;
-    top: 39%;
-    left: 44%;
-}
-.room4 .contact::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%; 
-    border-radius: 5%;
-    /* clip-path overflow:hidden 때문에 ::after사용 */
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 26% 100%, 25% 95%, 22% 90%, 17% 86%, 0 85%);
-}
-.room4 .contact:hover::after { background: rgba(255, 255, 255, 0.5); }
-
-.room4 .contactBox {
-    width: 90%;
-    height: 85%;
-    background: url('../img/browser.png') no-repeat center center;
-    background-size: 100% 100%;
-}
-.room4 .contactBox > div {
-    position: absolute;
-    top: 54%;
-    left: 50%;
-    width: 80%;
-    height: 75%;
-    transform: translate(-50%, -50%); 
-    overflow-y: scroll;
-}
-
-.room4 form { 
-    margin-top: 50px;
-}
-.room4 form table{ 
-    width: 90%;
-}
-.room4 form td { 
-    padding: 10px 0;
-    font-size: 20px; 
-}
-.room4 form td:first-child { text-align: right;}
-.room4 form td:first-child label { margin-right: 50px; }
-.room4 form input {
-    width: 100%;
-    padding: 10px;
-    height: 40px;
-    border: 1px solid #555;
-}
-.room4 form textarea {
-    width: 100%;
-    height: 200px;
-    border: 1px solid #555;
-    padding: 10px;
-    font-size: 15px; 
-}
-
-.room4 form .btn { 
-    text-align: center;
-    margin-top: 50px; 
-}
-.room4 form .btn .btn1,
-.room4 form .btn input {
     border: none;
-    outline: none;
-    text-align: center;
-    cursor: pointer;
-    overflow: hidden;
-    position: relative;
-    color: #fff;
-    font-weight: 700;
-    font-size: 15px;
-    background-color: #222;
-    padding: 17px 60px;
-    margin: 0 auto;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.20);
-    width: auto;
-    height: 50px;
 }
-.room4 form .btn .btn1 { margin-right: 20px; }
-.room4 form .btn input { background-color: rgb(156, 39, 39); }
-.room4 form .btn .btn1 span {
-    position: relative; 
-    z-index: 1;
-}
-.room4 form .btn .btn1::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 490%;
-    width: 140%;
-    background: #78c7d2;
-    transition: all .5s ease-in-out;
-    transform: translateX(-98%) translateY(-25%) rotate(45deg);
-}
-.room4 form .btn .btn1:hover::after { transform: translateX(-9%) translateY(-25%) rotate(45deg); }
 
-.room4 .send_message,
-.room4 .thankyou_message {
+img {
+    border: none;
+    display: block;
+    float: left;
+}
+
+button {
+    display: block;
+    float: left;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+li {
+    list-style: none;
+    position: relative;
+}
+
+#cover {
+    width: 100%;
+    height: 100%;
+    min-width: 1080px;
+    min-height: 960px;
+    position: absolute;
+    z-index: 99;
+    background: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+}
+
+#cover p {
+    color: white;
     text-align: center;
-    font-size: 20px;
+    font-size: 50px;
+    padding-top: 200px;
+}
+
+section {
+    width: 1070px;
+    height: 950px;
+    background: #141414;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+#screen {
+    width: 1070px;
+    height: 660px;
+    background: white;
+    overflow: hidden;
+}
+
+#hinter {
+    width: 870px;
+    min-width: 870px;
+    height: 460px;
+    background: rgba(200, 200, 200, 0.5);
+    position: absolute;
+    z-index: 20;
+    font-size: 42px;
+    padding: 100px;
+    display: none;
+    cursor: pointer;
+}
+
+#ending {
+    width: 1080px;
+    height: 610px;
+    background: #141414;
+    margin-top: -5px;
+    margin-left: -5px;
+    position: absolute;
+    z-index: 99;
+    text-align: center;
+    font-size: 120px;
+    padding-top: 350px;
+    color: #fff;
+    cursor: pointer;
     display: none;
 }
 
-
-/* 고래이미지 */
-.scene {
+#zoom {
+    position: fixed;
     width: 500px;
     height: 500px;
-    position: relative;
-    top: 50%;
+    border-radius: 20px;
+    background: rgba(240, 240, 240, 0.8);
+    z-index: 10;
     left: 50%;
-    transform: translate(-50%,-50%);
-}
-.scene .upper {
-    width: 100%;
-    height: 300px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    box-sizing: border-box;
-}
-.scene .moon {
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    background-color: #ffedba;
-    position: absolute;
-    bottom: -150px;
-    left: 50px;
-    border: 5px solid #333;
-    box-sizing: border-box;
-    box-shadow: inset 0 -160px #fdda79;
-    opacity: 0.9;
-}
-.scene .crater1 {
-    width: 20px;
-    height: 20px;
-    border-radius: 50% ;
-    position: absolute;
-    top: 20px;
-    right: 150px;
-    background-color: #fdda79;
-    opacity: 0.2;
-    border: 1px solid #333;
-}
-.scene .crater2 {
-    width: 50px;
-    height: 50px;
-    border-radius: 50% ;
-    position: absolute;
-    top: 70px;
-    right: 180px;
-    background-color: #fdda79;
-    opacity: 0.2;
-    border: 1px solid #333;
-}
-.scene .cloud1 {
-    width: 200px;
-    height: 150px;
-    position: absolute;
-    top: 100px;
-    right: -50px;
-    animation: float2 4s ease-in-out infinite alternate;
-}
-.scene .cloud2 {
-    width: 200px;
-    height: 150px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    animation: float1 4s ease-in-out infinite alternate;
-}
-@keyframes float1 {
-    from {transform: translateX(-50px);}
-    to {transform: translateX(50px);}
-}
-@keyframes float2 {
-    from {transform: translateX(50px);}
-    to {transform: translateX(-50px);}
-}
-.scene .circle {
-    width: 80px;
-    height: 80px;
-    position: absolute;
-    top: 0;
-    left: 60px;
-    border-radius: 50%;
-    background-color: fuchsia;
-}
-.scene .circle::before {
-    content: "";
-    width: 80px;
-    height: 80px;
-    position: absolute;
-    top: 30px;
-    left: -40px;
-    border-radius: 50%;
-    background-color: fuchsia;
-}
-.scene .circle::after {
-    content: "";
-    width: 80px;
-    height: 80px;
-    position: absolute;
-    top: 30px;
-    left: 40px;
-    border-radius: 50%;
-    background-color: fuchsia;
-}
-.scene .filler {
-    width: 145px;
-    height: 40px;
-    border-radius: 17px;
-    position: absolute;
-    top: 70px;
-    left: 28px;
-    background-color: fuchsia;
-    box-shadow: inset 0 -5px purple;
-}
-.scene .star1 {
-    width: 20px;
-    height: 5px;
-    border-radius: 5px;
-    background-color: purple;
-    position: absolute;
-    top: 20px;
-    right: 0;
-    animation: twinkle 0.5s 0.2s linear infinite alternate;
-}
-.scene .star1::after {
-    content: "";
-    width: 5px;
-    height: 20px;
-    border-radius: 5px;
-    background-color: purple;
-    position: absolute;
-    top: -7px;
-    right: 8px;
-    animation: twinkle 0.5s  0.2s linear infinite alternate;
-}
-.scene .star2 {
-    width: 20px;
-    height: 5px;
-    border-radius: 5px;
-    background-color: purple;
-    position: absolute;
-    top: -20px;
-    right: 200px;
-    animation: twinkle 0.5s 0.3s linear infinite alternate;
-}
-.scene .star2::after {
-    content: "";
-    width: 5px;
-    height: 20px;
-    border-radius: 5px;
-    background-color: purple;
-    position: absolute;
-    top: -7px;
-    right: 8px;
-    animation: twinkle 0.5s 0.3s linear infinite alternate;
-}
-.scene .star3 {
-    width: 20px;
-    height: 5px;
-    border-radius: 5px;
-    background-color: purple;
-    position: absolute;
-    top: 130px;
-    left: -20px;
-    animation: twinkle 0.5s linear infinite alternate;
-}
-.scene .star3::after {
-    content: "";
-    width: 5px;
-    height: 20px;
-    border-radius: 5px;
-    background-color: purple;
-    position: absolute;
-    top: -7px;
-    left: 8px;
-    animation: twinkle 0.5s linear infinite alternate;
-}
-@keyframes twinkle {
-    to {background-color: deeppink;}
-}
-.scene .tail {
-    width: 150px;
-    height: 120px;
-    position: absolute;
-    bottom: -10px;
-    left: 2px;
-}
-.scene .left {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: darkslateblue;
-    position: absolute;
-    top: 10px;
-    left: 20px;
-    border: 1px solid #333;
-    z-index: 1;
-}
-.scene .left::before {
-    content: "";
-    width: 60px;
-    height: 20px;
-    border-bottom: 60px solid darkslateblue;
-    border-radius: 0 0 0 100%;
-    position: absolute;
-    top: -20px;
-    left: -30px;
-    animation: excite1 2s infinite alternate linear;
-    transform-origin: right;
-}
-@keyframes excite1 {
-    to {transform: rotateZ(-5deg);}
-}
-.scene .right {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: darkslateblue;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    border: 1px solid #333;
-    z-index: 1;
-}
-.scene .right::after {
-    content: "";
-    width: 60px;
-    height: 20px;
-    border-bottom: 60px solid darkslateblue;
-    border-radius: 0 0 100% 0;
-    position: absolute;
-    top: -20px;
-    right: -30px;
-    animation: excite2 2s linear alternate infinite;
-    transform-origin: left;
-}
-@keyframes excite2 {
-    to {transform: rotateZ(5deg);}
-}
-.scene .body {
-    height: 80px;
-    width: 58px;
-    border-radius: 25px;
-    position: absolute;
-    bottom: -18px;
-    left: 54px;
-    background-color: darkslateblue;
-    transform: rotateZ(-10deg);
-    border: 2px solid #333;
-}
-.scene .drop {
-    height: 13px;
-    width: 13px;
-    border-radius: 50%;
-    background-color: purple;
-    position: absolute;
-    bottom: -25px;
-    right: 180px;
-    animation: spray 3s ease-out infinite;
-}
-.scene .drop::before {
-    content: "";
-    height: 10px;
-    width: 10px;
-    border-radius: 50%;
-    background-color: purple;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    animation: spray 3s 0.3s ease-out infinite;
-}
-.scene .drop::after {
-    content: "";
-    height: 12px;
-    width: 12px;
-    border-radius: 50%;
-    background-color: purple;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    animation: spray 3s 0.7s ease-out infinite;
-}
-@keyframes spray {
-    0% {transform: translateY(0);}
-    30% {transform: translateY(-100px);}
-    60% {transform: translateY(0);}
-}
-.scene .lower {
-    width: 100%;
-    height: 200px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    border-top: 5px solid #333;
-    overflow: hidden;
-}
-.scene .whale {
-    width: 400px;
-    height: 400px;
-    border-radius: 300px;
-    position: absolute;
-    top: -250px;
-    left: 50px;
-    background-color: slateblue;
-    box-shadow: inset 0 -10px darkslateblue;
-    border: 5px solid #333;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-.scene .eye {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    position: absolute;
-    bottom: 110px;
-    right: 120px;
-    background-color: #333;
-    animation: blink 2s linear infinite;
-}
-@keyframes blink {
-    0% {transform: scaleY(0.1);}
-    5% {transform: scaleY(0.1);}
-    5.1% {transform: scaleY(1);}
-}
-.scene .detail1 {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    position: absolute;
-    bottom: 10px;
-    right: 0px;
-    background-color: lightsteelblue;
-    overflow: hidden;
-    border: 2px solid #333;
-    box-sizing: border-box;
-}
-.scene .fin {
-    width: 50px;
-    height: 120px;
-    border-radius: 40px;
-    position: absolute;
-    bottom: 0;
-    right: 180px;
-    background-color: slateblue;
-    border: 5px solid #333;
-    border-top: 5px solid transparent;
-    transform: rotateZ(15deg);
-    box-shadow: inset 0 -10px darkslateblue;
-    animation: swim 2s linear infinite alternate;
-    transform-origin: top;
-}
-@keyframes swim {
-    to {transform: rotateZ(20deg);}
-}
-.scene .detail2 {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    position: absolute;
-    bottom: 0;
-    right: 30px;
-    border-bottom: 8px solid #333;
-    border-right: 8px solid #333;
-    transform: rotateZ(-50deg);
-}
-.scene .detail2::before {
-    content: "";
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    position: absolute;
-    bottom: 20px;
-    right: 10px;
-    border-bottom: 8px solid #333;
-    border-right: 8px solid #333;
-}
-.scene .detail2::after {
-    content: "";
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    position: absolute;
-    bottom: 5px;
-    right: 0;
-    border-bottom: 8px solid #333;
-    border-right: 8px solid #333;
+    margin-left: -250px;
+    top: 50px;
+    cursor: pointer;
+    display: none;
 }
 
+#zoom > img {
+    display: none;
+}
+
+#back {
+    width: 2140px;
+    height: 1320px;
+    margin-left: -535px;
+    margin-top: -330px;
+    background: url(https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/back.png);
+}
+
+.clicker {
+    position: absolute;
+    z-index: 3;
+    cursor: pointer;
+}
+
+#dd1 {
+    left: 799px;
+    top: 730px;
+}
+
+#dd3 {
+    left: 1770px;
+    top: 665px;
+}
+
+#dd6 {
+    left: 1043px;
+    top: 707px;
+}
+
+#door1 {
+    left: 1835px;
+    top: 2px;
+}
+
+#door2 {
+    left: 1910px;
+    top: 0px;
+}
+
+#door3 {
+    left: 1940px;
+    top: 0px;
+}
+
+#win1 {
+    left: 0px;
+    top: 0px;
+}
+
+#win2 {
+    left: 320px;
+    top: 0px;
+}
+
+#win3 {
+    left: 792px;
+    top: 210px;
+}
+
+#tv {
+    left: 646px;
+    top: 500px;
+}
+
+#box1 {
+    left: 325px;
+    top: 775px;
+}
+
+#box2 {
+    left: 1515px;
+    top: 907px;
+}
+
+#lathe1 {
+    left: 986px;
+    top: 171px;
+}
+
+#lathe2 {
+    left: 1148px;
+    top: 285px;
+}
+
+#lathe3 {
+    left: 1402px;
+    top: 75px;
+}
+
+#lathet {
+    left: 1148px;
+    top: 140px;
+}
+
+#table1 {
+    left: 665px;
+    top: 695px;
+}
+
+#table2 {
+    left: 795px;
+    top: 680px;
+}
+
+#table3 {
+    left: 856px;
+    top: 506px;
+}
+
+
+#itembox {
+    width: 107px;
+    height: 80px;
+    position: absolute;
+    z-index: 5;
+}
+
+#item {
+    float: left;
+    width: 1070px;
+    height: 66px;
+    font-size: 30px;
+    color: #fff;
+}
+
+#item button {
+    float: left;
+    width: 105px;
+    height: 80px;
+    font-size: 28px;
+    background: #141414;
+    color: #fff;
+    text-shadow: 2px 2px 2px black;
+    cursor: pointer;
+    border: 0;
+    border-radius: 0px 0px 15px 0px;
+}
+
+.inv {
+    width: 105px;
+    height: 62px;
+    min-height: 62px;
+    float: left;
+    background: rgba(50, 50, 50, 0.7);
+    border: 2px solid rgb(50, 50, 50);
+    border-right: 0;
+    display: none;
+}
+
+.inv img {
+    cursor: pointer;
+    width: 0px;
+    height: 62px;
+}
+
+#inv9 {
+    border-right: 2px solid rgba(50, 50, 50, 0.7);
+}
+
+.speech {
+    width: 1050px;
+    height: 113px;
+    padding: 10px;
+    background: rgba(30, 30, 30, 0.6);
+    position: absolute;
+    z-index: 3;
+    top: 532px;
+    cursor: pointer;
+    display: none;
+}
+
+.speech h1 {
+    font-size: 30px;
+    width: 1040px;
+    height: 32px;
+    padding: 0px 20px;
+    color: #fff;
+}
+
+.speech p {
+    font-size: 20px;
+    width: 1060px;
+    height: 80px;
+    padding: 10px;
+    color: #eee;
+}
+
+#spc01 {
+    display: block;
+}
+
+
+
+
+#control {
+    width: 1070px;
+    height: 190px;
+    margin-top: 5px;
+}
+
+#pad1 {
+    float: left;
+    width: 214px;
+    height: 190px;
+    margin-left: 107px;
+}
+
+#minimap {
+    width: 60px;
+    height: 60px;
+    background: rgb(200, 200, 200);
+    border-radius: 10px;
+    margin: 55px;
+    padding: 10px;
+}
+
+#space1 {
+    float: left;
+    width: 60px;
+    height: 20px;
+}
+
+#space2 {
+    float: left;
+    width: 20px;
+    height: 20px;
+}
+
+#space3 {
+    float: left;
+    width: 0px;
+    height: 20px;
+}
+
+#dot {
+    float: left;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background: red;
+}
+
+#pad2 {
+    float: left;
+    width: 194px;
+    height: 170px;
+    padding: 10px;
+    margin-left: 107px;
+}
+
+#btl,
+#btr {
+    cursor: pointer;
+}
+
+#btu,
+#btd {
+    margin: 0px 70px;
+    cursor: pointer;
+}
+
+#pad3 {
+    float: left;
+    width: 194px;
+    height: 70px;
+    padding: 60px 10px;
+    margin-left: 107px;
+}
+
+#hint {
+    width: 150px;
+    height: 70px;
+    font-size: 50px;
+    color: #111;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+footer {
+    width: 1070px;
+    height: 90px;
+    padding-top: 5px;
+}
+
+footer h1 {
+    text-align: center;
+    font-size: 20px;
+    color: white;
+}

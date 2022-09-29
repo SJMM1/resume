@@ -4,168 +4,241 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RESUME</title>
-
-    <script src="./js/prefixfree.min.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
-
-    <link rel="stylesheet" href="./css/reset.css">
+    <title>조수진</title>
     <link rel="stylesheet" href="./css/index.css">
-
-    <!--[if lt IE 9]>
-        <script src="./js/html5shiv.js"></script>        
-    <![endif]-->
-
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="./js/jquery.rwdImageMaps.min.js"></script>
-    <script src="./js/turn.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body>
-    <section class="container">
-        <article class="box">
-            <div class="room room1">
-                <img src="./img/about.jpg" alt="1번방">
-                <div class="maparea about">
-                    <span data-tooltip="click!"></span>
-                </div>
-                <div class="pop aboutBox">
-                    <a href="#" class="close">
-                        <i class="fa-solid fa-circle-xmark"></i>
-                    </a>
-                    <div>
-                        <div class="center">
-                            <h1>ABOUT ME</h1>
-                            <div class="aboutimg">
-                                <img src="./img/me.png" alt="">
-                            </div>
-                            <div>
-                                <p>조 수 진</p>
-                            </div>
-                        </div>
-                        <div class="info">
-                            <div class="right">
-                                <p>
-                                    자격증<br>
-                                    웹디자인기능사<br>
-                                    GTQ, GTQi 1급<br>
-                                    MOS - Word, PowerPoint, Excel<br>
-                                    2종보통운전면허<br>
-                                    ITQ - 엑셀, 파워포인트, 한글<br>
-                                    워드프로세서 3급<br>
-                                </p>
-                                <p>
-                                    교육<br>
-                                    2022 이젠아카데미 - 스마트 UIUX앱&웹디자인<br>
-                                    2017 더조은아카데미 - 빅데이터 분석을 위한 자바, 파이썬 개발<br>
-                                    * 데이터베이스 기술 수립 및 SQL 활용, 관리<br>
-                                    * Java, JSP, Servlet, JavaScript(Ajax, jQuery)<br>
-                                    * Framework - Spring, MyBatis<br>
-                                    * Database - Oracle, My SQL, MongoDB<br>
-                                </p>
-                            </div>
-                            <div>
-                                <p>
-                                    경력<br>
-                                    2018~2020 클립서비스<br>
-                                    * 뮤지컬, 공연 웹사이트 개발 및 유지보수<br>
-                                    * 관리자용(admin) 사이트 개발 및 유지보수<br><br>
-                                    2018 스타리<br>
-                                    * 웹사이트 퍼블리싱 
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+<body oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;">
+    <section>
+        <div id="ending">탈출성공!!!</div>
+        <article id="screen">
+            <div id="hinter" onclick="hindel();">
+                1. 너무 빠르게 클릭하면 인식이 잘 안됩니다<br><br>
+                2. 아이템을 누르면 설명이 나옵니다<br><br>
+                3. 출구는 오른쪽에 있습니다<br><br>
+                4. javascript를 처음 배울 때 만들어서 오류가 있을 수 있습니다
+            </div>
+
+            <div id="zoom" onclick="clr0();">
+                <img id="zo1" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/zoom1.png">
+                <img id="zo2" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/zoom2.png">
+                <img id="zo3" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/zoom3.png">
+                <img id="zo4" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/zoom4.png">
+                <img id="zo5" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/zoom5.png">
+                <img id="zo6" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/zoom6.png">
+                <img id="zo7" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/zoom7.png">
+                <img id="zo8" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/zoom8.png">
+                <img id="zo9" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/zoom9.png">
+            </div>
+
+            <div id="itembox">
+                <ul id="item"><button onclick="invopen();">Item</button>
+                    <li class="inv"><img id="inv1" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/keys.png" onclick="ob10();"></li>
+                    <li class="inv"><img id="inv2" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/keyb.png" onclick="ob11();"></li>
+                    <li class="inv"><img id="inv3" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/keyw.png" onclick="ob12();"></li>
+                    <li class="inv"><img id="inv4" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/lantern.png" onclick="ob13();"></li>
+                    <li class="inv"><img id="inv5" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/battery1.png" onclick="ob14();"></li>
+                    <li class="inv"><img id="inv6" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/battery2.png" onclick="ob15();"></li>
+                    <li class="inv"><img id="inv7" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/paper.png" onclick="ob16();"></li>
+                    <li class="inv"><img id="inv8" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/money.png" onclick="ob17();"></li>
+                    <li class="inv"><img id="inv9" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/keyg.png" onclick="ob18();"></li>
+                </ul>
+            </div>
+
+            <div id="back">
+                <img class="clicker" id="door1" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/door1.png" onclick="ob00();">
+                <img class="clicker" id="door2" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/door2.png" onclick="ob00();">
+                <img class="clicker" id="win1" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/win1.png" onclick="ob01();">
+                <img class="clicker" id="win2" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/win2.png" onclick="ob01();">
+                <img class="clicker" id="win3" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/win3.png" onclick="ob01();">
+                <img class="clicker" id="tv" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/tv.png" onclick="ob02();">
+                <img class="clicker" id="box1" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/box1.png" onclick="ob03();">
+                <img class="clicker" id="box2" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/box2.png" onclick="ob04();">
+                <img class="clicker" id="lathe1" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/lathe1.png" onclick="ob05();">
+                <img class="clicker" id="lathe2" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/lathe2.png" onclick="ob05();">
+                <img class="clicker" id="lathe3" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/lathe3.png" onclick="ob05();">
+                <img class="clicker" id="lathet" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/lathet.png" onclick="ob06();">
+                <img class="clicker" id="table1" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/table1.png" onclick="ob07();">
+                <img class="clicker" id="table2" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/table2.png" onclick="ob07();">
+                <img class="clicker" id="table3" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/table3.png" onclick="ob08();">
+                <img class="clicker" id="door3" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/door3.png" onclick="ob09();">
+                <img class="clicker" src="images/.png" onclick="obj00();">
+                <img class="clicker" id="dd1" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/keysdd.png" onclick="root1();">
+                <img class="clicker" id="dd3" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/keywdd.png" onclick="root3();">
+                <img class="clicker" id="dd6" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/batterydd.png" onclick="root6();">
+            </div>
+
+            <div class="speech" id="spc01" onclick="clr1();">
+                <h1>???</h1>
+                <p>여긴 어디? 나는 누구?</p>
+            </div>
+            <div class="speech" id="spc02" onclick="clr1();">
+                <h1>문</h1>
+                <p>문은 굳게 잠겨서 열리지 않는다.</p>
+            </div>
+            <div class="speech" id="spc03" onclick="clr1();">
+                <h1>창문</h1>
+                <p>단단히 고정되어있다. 유리를 깰 순 있을것 같지만 그 사이로 나가는것은 무리다.</p>
+            </div>
+            <div class="speech" id="spc04" onclick="clr1();">
+                <h1>TV</h1>
+                <p>버튼을 눌러봐도 켜지지 않는다.</p>
+            </div>
+            <div class="speech" id="spc05" onclick="clr1();">
+                <h1>상자</h1>
+                <p>단단한 상자. 흔들어 보니 안에 무언가 있는 것 같다. <br />살펴보니 반대편에 자물쇠가 잠겨있다.</p>
+            </div>
+            <div class="speech" id="spc06" onclick="clr1();">
+                <h1>바구니</h1>
+                <p>안에 뭔가가 있다.</p>
+            </div>
+            <div class="speech" id="spc07" onclick="clr1();">
+                <h1>바구니</h1>
+                <p>살펴봤지만 다른것은 찾을 수 없다.</p>
+            </div>
+            <div class="speech" id="spc08" onclick="clr1();">
+                <h1>선반</h1>
+                <p>살펴봐도 별다른 것은 없다.</p>
+            </div>
+            <div class="speech" id="spc09" onclick="clr1();">
+                <h1>선반</h1>
+                <p>맨 윗칸에 손을 넣자 무언가 손에 잡힌다.</p>
+            </div>
+            <div class="speech" id="spc10" onclick="clr1();">
+                <h1>선반</h1>
+                <p>그 외의 다른것은 없다.</p>
+            </div>
+            <div class="speech" id="spc11" onclick="clr1();">
+                <h1>은색열쇠</h1>
+                <p>은색의 열쇠를 발견했다.</p>
+            </div>
+            <div class="speech" id="spc12" onclick="clr1();">
+                <h1>서랍</h1>
+                <p>텅 비어있다.</p>
+            </div>
+            <div class="speech" id="spc13" onclick="clr1();">
+                <h1>방직기?</h1>
+                <p>뭔지 모를 물건이 놓여있다. 예전에 교과서에서 본것같은데..?</p>
+            </div>
+            <div class="speech" id="spc14" onclick="clr1();">
+                <h1>화장실</h1>
+                <p>잠겨있다. 어딘가 열쇠가 있지 않을까?</p>
+            </div>
+            <div class="speech" id="spc15" onclick="clr1();">
+                <h1>화장실</h1>
+                <p>은색 열쇠로 문을 열었지만 어두워서 아무것도 보이지 않는다.</p>
+            </div>
+            <div class="speech" id="spc16" onclick="clr1();">
+                <h1>화장실</h1>
+                <p>손전등을 켜고 자세히 살폈더니 구석에서 열쇠를 발견했다.</p>
+            </div>
+            <div class="speech" id="spc17" onclick="clr1();">
+                <h1>화장실</h1>
+                <p>더 살펴봐도 다른 물건은 없는 것 같다.</p>
+            </div>
+            <div class="speech" id="spc18" onclick="clr1();">
+                <h1>방직기?</h1>
+                <p>쪽지의 내용대로 자세히 살펴보니 작은 열쇠구멍이 있다.</p>
+            </div>
+            <div class="speech" id="spc19" onclick="clr1();">
+                <h1>방직기?</h1>
+                <p>안쪽의 작은 구멍에 검은 열쇠를 넣고 돌리자 작은 소리와 함께 무언가 떨어졌다.</p>
+            </div>
+            <div class="speech" id="spc20" onclick="clr1();">
+                <h1>방직기?</h1>
+                <p>열쇠를 더 돌려봐도 아무런 변화가 없다.</p>
+            </div>
+            <div class="speech" id="spc21" onclick="clr1();">
+                <h1>백색열쇠</h1>
+                <p>흰색의 열쇠를 발견했다.</p>
+            </div>
+            <div class="speech" id="spc22" onclick="clr1();">
+                <h1>건전지</h1>
+                <p>건전지를 발견했다. 어딘가 쓸 수 있지 않을까?</p>
+            </div>
+            <div class="speech" id="spc23" onclick="clr1();">
+                <h1>상자</h1>
+                <p>흰색의 열쇠를 자물쇠에 대 보자 딱 맞는다.<br>안에는 놀랍게도 돈다발이 가득했다.</p>
+            </div>
+            <div class="speech" id="spc24" onclick="clr1();">
+                <h1>상자</h1>
+                <p>이 돈은 이제 제겁니다, 제 마음대로 쓸 수 있는 겁니다.</p>
+            </div>
+            <div class="speech" id="spc30" onclick="clr1();">
+                <h1>은색열쇠</h1>
+                <p>은색의 열쇠다.</p>
+            </div>
+            <div class="speech" id="spc31" onclick="clr1();">
+                <h1>흑색열쇠</h1>
+                <p>검은색의 열쇠다.</p>
+            </div>
+            <div class="speech" id="spc32" onclick="clr1();">
+                <h1>백색열쇠</h1>
+                <p>하얀색의 열쇠다.</p>
+            </div>
+            <div class="speech" id="spc33" onclick="clr1();">
+                <h1>손전등</h1>
+                <p>건전지가 2개 들어가는 손전등.</p>
+            </div>
+            <div class="speech" id="spc34" onclick="clr1();">
+                <h1>건전지A</h1>
+                <p>평범한 건전지.</p>
+            </div>
+            <div class="speech" id="spc35" onclick="clr1();">
+                <h1>건전지B</h1>
+                <p>평범한 건전지.</p>
+            </div>
+            <div class="speech" id="spc36" onclick="clr1();">
+                <h1>쪽지</h1>
+                <p>'방직기의 안쪽' 이라고 써있다.</p>
+            </div>
+            <div class="speech" id="spc37" onclick="clr1();">
+                <h1>돈다발</h1>
+                <p>난 이제 부자다.</p>
+            </div>
+            <div class="speech" id="spc38" onclick="clr1();">
+                <h1>금색열쇠</h1>
+                <p>황금색의 열쇠다. 진짜 금일까..?</p>
+            </div>
+            <div class="speech" id="spc39" onclick="clr1();">
+                <h1>돈다발</h1>
+                <p>자세히 보니 돈다발 사이에 무언가 끼어있다.</p>
+            </div>
+            <div class="speech" id="spc99" onclick="clr1();">
+                <h1>문</h1>
+                <p>금색 열쇠를 넣고 돌리자 문이 열린다.</p>
             </div>
         </article>
-        <article class="box">
-            <div class="room room2">
-                <img src="./img/skill.jpg" alt="2번방">
-                <div class="maparea skill">
-                    <span data-tooltip="click!"></span>
-                </div>
-                <div class="pop skillBox">
-                    <a href="#" class="close">
-                        <i class="fa-solid fa-circle-xmark"></i>
-                    </a>
-                    <div></div>             
-                </div>         
-            </div>
-        </article>
-        <article class="box">
-            <div class="room room3">
-                <img src="./img/portfolio.jpg" alt="3번방">
-                <div class="maparea portfolio">
-                    <span data-tooltip="click!"></span>
-                </div>
-                <div class="pop portfolioBox">
-                    <a href="#" class="close">
-                        <i class="fa-solid fa-circle-xmark"></i>
-                    </a>
+
+        <article id="control">
+            <div id="pad1">
+                <div id="minimap">
+                    <div id="space1"></div>
+                    <div id="space2"></div>
+                    <div id="space3"></div>
+                    <div id="dot"></div>
                 </div>
             </div>
-        </article>
-        <article class="box">
-            <div class="room room4">
-                <img src="./img/contact.jpg" alt="4번방">
-                <div class="maparea contact">
-                    <span data-tooltip="click!"></span>
-                </div>
-                <div class="pop contactBox">
-                    <a href="#" class="close">
-                        <i class="fa-solid fa-circle-xmark"></i>
-                    </a>
-                    <div>
-                        <h1>CONTACT ME!</h1>
-                        <form class="gform" method="post" action="https://script.google.com/macros/s/AKfycbyAihuRIBV2gKYPe6lzrjujfz2agTOmXUAQLBjGTA/exec">
-                            <table>
-                                <colgroup>
-                                    <col width="30%">
-                                    <col width="*">
-                                </colgroup>
-                                <tr>
-                                    <td>
-                                        <label for="name">이름</label>
-                                    </td>
-                                    <td>
-                                        <input type="text" name="name" id="name">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="email">이메일</label>
-                                    </td>
-                                    <td>
-                                        <input type="email" name="email" id="email">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="hp">핸드폰번호</label>
-                                    </td>
-                                    <td>
-                                        <input type="tel" name="hp" id="hp" placeholder="-없이 숫자만 입력하세요.">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="message">메세지</label>
-                                    </td>
-                                    <td>
-                                        <textarea name="message" id="message"></textarea>
-                                    </td>
-                                </tr>
-                            </table>
-                            <div class="formWrap"></div>
-                        </form>
-                    </div>
-                </div>
+
+            <div id="pad2">
+                <img id="btu" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/btu.png" width="54" height="60" onclick="bup();">
+                <img id="btl" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/btl.png" width="70" height="50" onclick="bleft();">
+                <img id="btc" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/btc.png" width="54" height="50">
+                <img id="btr" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/btr.png" width="70" height="50" onclick="bright();">
+                <img id="btd" src="https://raw.githubusercontent.com/Tir-na-nog/image/master/test-room/btd.png" width="54" height="60" onclick="bdown();">
+            </div>
+
+            <div id="pad3">
+                <button id="hint" onclick="hint();">Hint</button>
             </div>
         </article>
+
+        <footer>
+            <h1 id="notice">Room v1.1<br /> KJS - 2014</h1>
+        </footer>
     </section>
-    <div class="items"></div>
+
     <script src="./js/index.js"></script>
-    <script src="./js/mail.js"></script>
 </body>
 </html>
