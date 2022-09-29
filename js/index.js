@@ -1,619 +1,288 @@
-function invopen() {
-    $('.inv').toggle(300);
+function tmp() { 
+    // container의 가로사이즈(화면가로 * box 개수)
+    let con_width = ($(window).outerWidth() - $('.items').width()) * $('.box').length; 
+
+    $('.container').css({
+        width: con_width,
+        height: '100vh',
+        position: 'fixed',
+        top: 0,
+        left: 0
+    });
+
+    $('.box').css({
+        width: con_width / $('.box').length,
+        height: '100vh',
+        float: 'left'
+    });
 }
 
-function bup() {
-    if ($('#space1').width() <= 62 && $('#space1').width() >= 58 && $('#space2').width() <= 2) {
-        $('#space1').animate({
-            width: 0
-        }, 0);
-        $('#space2').animate({
-            width: 0
-        }, 0);
-        $('#space3').animate({
-            width: 0
-        }, 0);
-        h1();
-    } else if ($('#space1').width() <= 62 && $('#space1').width() >= 58 && $('#space2').width() <= 22 && $('#space2').width() >= 18) {
-        $('#space1').animate({
-            width: 20
-        }, 0);
-        $('#space2').animate({
-            width: 0
-        }, 0);
-        $('#space3').animate({
-            width: 0
-        }, 0);
-        h1();
-    } else if ($('#space1').width() <= 62 && $('#space1').width() >= 58 && $('#space2').width() <= 42 && $('#space2').width() >= 38) {
-        $('#space1').animate({
-            width: 40
-        }, 0);
-        $('#space2').animate({
-            width: 0
-        }, 0);
-        $('#space3').animate({
-            width: 0
-        }, 0);
-        h1();
-    } else if ($('#space1').width() <= 62 && $('#space1').width() >= 58 && $('#space2').width() <= 62 && $('#space2').width() >= 58 && $('#space3').width() <= 2) {
-        $('#space1').animate({
-            width: 60
-        }, 0);
-        $('#space2').animate({
-            width: 0
-        }, 0);
-        $('#space3').animate({
-            width: 0
-        }, 0);
-        h2();
-    } else if ($('#space1').width() <= 62 && $('#space1').width() >= 58 && $('#space2').width() <= 62 && $('#space2').width() >= 58 && $('#space3').width() <= 22 && $('#space3').width() >= 18) {
-        $('#space1').animate({
-            width: 60
-        }, 0);
-        $('#space2').animate({
-            width: 20
-        }, 0);
-        $('#space3').animate({
-            width: 0
-        }, 0);
-        h2();
-    } else if ($('#space1').width() <= 62 && $('#space1').width() >= 58 && $('#space2').width() <= 62 && $('#space2').width() >= 58 && $('#space3').width() <= 42 && $('#space3').width() >= 38) {
-        $('#space1').animate({
-            width: 60
-        }, 0);
-        $('#space2').animate({
-            width: 40
-        }, 0);
-        $('#space3').animate({
-            width: 0
-        }, 0);
-        h2();
-    } else return;
-}
+tmp();
+$(window).resize(function(){
+    tmp();
+})
 
-function bdown() {
-    if ($('#space1').width() <= 2 && $('#space2').width() <= 2 && $('#space3').width() <= 2) {
-        $('#space1').animate({
-            width: 60
-        }, 0);
-        $('#space2').animate({
-            width: 0
-        }, 0);
-        $('#space3').animate({
-            width: 0
-        }, 0);
-        h2();
-    } else if ($('#space1').width() <= 22 && $('#space1').width() >= 18 && $('#space2').width() <= 2 && $('#space3').width() <= 2) {
-        $('#space1').animate({
-            width: 60
-        }, 0);
-        $('#space2').animate({
-            width: 20
-        }, 0);
-        $('#space3').animate({
-            width: 0
-        }, 0);
-        h2();
-    } else if ($('#space1').width() <= 42 && $('#space1').width() >= 38 && $('#space2').width() <= 2 && $('#space3').width() <= 2) {
-        $('#space1').animate({
-            width: 60
-        }, 0);
-        $('#space2').animate({
-            width: 40
-        }, 0);
-        $('#space3').animate({
-            width: 0
-        }, 0);
-        h2();
-    } else if ($('#space1').width() >= 58 && $('#space2').width() <= 2 && $('#space3').width() <= 2) {
-        $('#space1').animate({
-            width: 60
-        }, 0);
-        $('#space2').animate({
-            width: 60
-        }, 0);
-        $('#space3').animate({
-            width: 0
-        }, 0);
-        h3();
-    } else if ($('#space1').width() >= 58 && $('#space2').width() <= 22 && $('#space2').width() >= 18 && $('#space3').width() <= 2) {
-        $('#space1').animate({
-            width: 60
-        }, 0);
-        $('#space2').animate({
-            width: 60
-        }, 0);
-        $('#space3').animate({
-            width: 20
-        }, 0);
-        h3();
-    } else if ($('#space1').width() >= 58 && $('#space2').width() <= 42 && $('#space2').width() >= 38 && $('#space3').width() <= 2) {
-        $('#space1').animate({
-            width: 60
-        }, 0);
-        $('#space2').animate({
-            width: 60
-        }, 0);
-        $('#space3').animate({
-            width: 40
-        }, 0);
-        h3();
-    } else return;
-}
+let chk = true;
 
-function bleft() {
-    if ($('#space1').width() <= 22 && $('#space1').width() >= 18 && $('#space2').width() <= 2 && $('#space3').width() <= 2) {
-        $('#space1').animate({
-            width: 0
-        }, 0);
-        $('#space2').animate({
-            width: 0
-        }, 0);
-        $('#space3').animate({
-            width: 0
-        }, 0);
-        v1();
-    } else if ($('#space1').width() <= 62 && $('#space1').width() >= 58 && $('#space2').width() <= 22 && $('#space2').width() >= 18 && $('#space3').width() <= 2) {
-        $('#space1').animate({
-            width: 60
-        }, 0);
-        $('#space2').animate({
-            width: 0
-        }, 0);
-        $('#space3').animate({
-            width: 0
-        }, 0);
-        v1();
-    } else if ($('#space1').width() <= 62 && $('#space1').width() >= 58 && $('#space2').width() <= 62 && $('#space2').width() >= 58 && $('#space3').width() <= 22 && $('#space3').width() >= 18) {
-        $('#space1').animate({
-            width: 60
-        }, 0);
-        $('#space2').animate({
-            width: 60
-        }, 0);
-        $('#space3').animate({
-            width: 0
-        }, 0);
-        v1();
-    } else if ($('#space1').width() <= 42 && $('#space1').width() >= 38 && $('#space2').width() <= 2 && $('#space3').width() <= 2) {
-        $('#space1').animate({
-            width: 20
-        }, 0);
-        $('#space2').animate({
-            width: 0
-        }, 0);
-        $('#space3').animate({
-            width: 0
-        }, 0);
-        v2();
-    } else if ($('#space1').width() <= 62 && $('#space1').width() >= 58 && $('#space2').width() <= 42 && $('#space2').width() >= 38 && $('#space3').width() <= 2) {
-        $('#space1').animate({
-            width: 60
-        }, 0);
-        $('#space2').animate({
-            width: 20
-        }, 0);
-        $('#space3').animate({
-            width: 0
-        }, 0);
-        v2();
-    } else if ($('#space1').width() <= 62 && $('#space1').width() >= 58 && $('#space2').width() <= 62 && $('#space2').width() >= 58 && $('#space3').width() <= 42 && $('#space3').width() >= 38) {
-        $('#space1').animate({
-            width: 60
-        }, 0);
-        $('#space2').animate({
-            width: 60
-        }, 0);
-        $('#space3').animate({
-            width: 20
-        }, 0);
-        v2();
-    } else return;
-}
+$('.box').on('mousewheel DOMMouseScroll', function(){
+    if(!$('.pop').hasClass('on')) {
+        if(chk) {
+            // 휠 일정시간동안 막기
+            chk = false;
+            setTimeout(function(){
+                chk = true;
+            }, 500)
+    
+            // 휠 방향 감지(아래: -120, 위: 120)
+            let w_delta = event.wheelDelta / 120;
+            
+            // 휠 아래로s
+            if(w_delta < 0 && $(this).next().length > 0) {
+                $('.container').animate({
+                    left: -$(this).width() * ($(this).index()+1)
+                }, 500)
+            }
+            // 휠 위로
+            else if(w_delta > 0 && $(this).prev().length > 0) {
+                $('.container').animate({
+                    left: -$(this).width() * ($(this).index()-1)
+                }, 500)
+            }
+        }
+    } 
+});
 
-function bright() {
-    if ($('#space1').width() <= 2 && $('#space2').width() <= 2 && $('#space3').width() <= 2) {
-        $('#space1').animate({
-            width: 20
-        }, 0);
-        $('#space2').animate({
-            width: 0
-        }, 0);
-        $('#space3').animate({
-            width: 0
-        }, 0);
-        v2();
-    } else if ($('#space1').width() <= 62 && $('#space1').width() >= 58 && $('#space2').width() <= 2 && $('#space3').width() <= 2) {
-        $('#space1').animate({
-            width: 60
-        }, 0);
-        $('#space2').animate({
-            width: 20
-        }, 0);
-        $('#space3').animate({
-            width: 0
-        }, 0);
-        v2();
-    } else if ($('#space1').width() <= 62 && $('#space1').width() >= 58 && $('#space2').width() <= 62 && $('#space2').width() >= 58 && $('#space3').width() <= 2) {
-        $('#space1').animate({
-            width: 60
-        }, 0);
-        $('#space2').animate({
-            width: 60
-        }, 0);
-        $('#space3').animate({
-            width: 20
-        }, 0);
-        v2();
-    } else if ($('#space1').width() <= 22 && $('#space1').width() >= 18 && $('#space2').width() <= 2 && $('#space3').width() <= 2) {
-        $('#space1').animate({
-            width: 40
-        }, 0);
-        $('#space2').animate({
-            width: 0
-        }, 0);
-        $('#space3').animate({
-            width: 0
-        }, 0);
-        v3();
-    } else if ($('#space1').width() <= 62 && $('#space1').width() >= 58 && $('#space2').width() <= 22 && $('#space2').width() >= 18 && $('#space3').width() <= 2) {
-        $('#space1').animate({
-            width: 60
-        }, 0);
-        $('#space2').animate({
-            width: 40
-        }, 0);
-        $('#space3').animate({
-            width: 0
-        }, 0);
-        v3();
-    } else if ($('#space1').width() <= 62 && $('#space1').width() >= 58 && $('#space2').width() <= 62 && $('#space2').width() >= 58 && $('#space3').width() <= 22 && $('#space3').width() >= 18) {
-        $('#space1').animate({
-            width: 60
-        }, 0);
-        $('#space2').animate({
-            width: 60
-        }, 0);
-        $('#space3').animate({
-            width: 40
-        }, 0);
-        v3();
-    } else return;
-}
+$('img[usemap]').rwdImageMaps();
 
-function v1() {
-    $('#back').animate({
-        marginLeft: 0
-    }, 500);
-}
+// 팝업창
+$('.maparea').on('click', function(){
+    $(this).next().addClass('on')
+    $(this).parent().append(`<div class='backcolor'></div>`)
+    
+    // room1
+    if ($(this).hasClass('about')) {
+        $('.aboutBox').ripples({
+            resolution: 512,
+            dropRadius: 10,
+            perturbance: 0.0001
+        });
+    }
 
-function v2() {
-    $('#back').animate({
-        marginLeft: -535
-    }, 500);
-}
+    // room2
+    if ($(this).hasClass('skill')) {
+        let chart = `<canvas id="skill"></canvas>`
+        $('.skillBox > div').append(chart)
+        new Chart($('#skill'), {
+            type: 'polarArea',
+            data: {
+                labels: ['HTML', 'CSS', 'JavaScript', 'JQuery', 'PHOTOSHOP', 'ILLUSTRATOR'],
+                datasets: [{
+                    label: 'SKILL',
+                    data: [85, 75, 65, 70, 60, 60],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.3)',
+                        'rgba(54, 162, 235, 0.3)',
+                        'rgba(255, 206, 86, 0.3)',
+                        'rgba(75, 192, 192, 0.3)',
+                        'rgba(153, 102, 255, 0.3)',
+                        'rgba(255, 159, 64, 0.3)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    r: {
+                        pointLabels: {
+                            display: true,
+                            centerPointLabels: true,
+                            font: {
+                                size: 16,
+                                family: 'Gowun Dodum'
+                            }
+                        },
+                        // min: 0,
+                        // max: 100
+                        ticks : {
+                            backdropColor: 'rgba(255, 255, 255, 0)',
+                            font : {
+                                size: 16,
+                                family: 'Gowun Dodum'
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        display: true,
+                        labels: {
+                            font: {
+                                size: 16,
+                                family: 'Gowun Dodum'
+                            }
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'SKILL',
+                        font: {
+                            size: 50,
+                            weight: 'bold',
+                            family: 'Gowun Dodum'
+                        }
+                    }
+                }
+            }
+        });
+    }
 
-function v3() {
-    $('#back').animate({
-        marginLeft: -1070
-    }, 500);
-}
+    // room3
+    if ($(this).hasClass('portfolio')) {
+        let book = 
+        `<div id="flipbook">
+            <div class="hard">
+                <div class="pageWrap">
+                    <h1>PORTFOLIO</h1>
+                    <div class="scene">
+                        <div class="upper">
+                        <div class="moon">
+                            <div class="crater1"></div>
+                            <div class="crater2"></div>
+                        </div>
+                        <div class="star1"></div>
+                        <div class="star2"></div>
+                        <div class="star3"></div>
+                        <div class="cloud1">
+                            <div class="circle"></div>
+                            <div class="filler"></div>
+                        </div>
+                        <div class="cloud2">
+                            <div class="circle"></div>
+                            <div class="filler"></div>
+                        </div>
+                        <div class="tail">
+                            <div class="left"></div>
+                            <div class="right"></div>
+                            <div class="body"></div>
+                        </div>
+                        <div class="drop"></div>
+                        </div>
+                        <div class="lower">
+                        <div class="whale">
+                            <div class="eye"></div>
+                            <div class="detail1">
+                            <div class="detail2"></div>
+                            </div>
+                        </div>
+                        <div class="fin"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hard"></div>
+            <div>
+                <div class="pageWrap">
+                    <div class="blockquote">
+                        <h2 class="center">홍루이젠<br>홈페이지<br>리뉴얼</h2>
+                        <p>홍루이젠 홈페이지의 메인 페이지와<br>서브 페이지(로그인, 회원가입, 메뉴)를<br>리뉴얼했습니다.<br>
+                        반응형으로 제작되었습니다.</p>
+                    </div>
+                    <button class="more_btn" onclick="window.open('https://sjmm1.github.io/hongruizhen/')"><span>Click!</span><span>바로가기</span></button>
+                </div>
+            </div>
+            <div>
+                <div class="pageWrap">
+                    <div class="rwdP rwd">
+                        <div class="overlay"></div>
+                        <img src="./img/imac.png" alt="imac">
+                    </div>   
+                </div>
+            </div>
+            <div>
+                <div class="pageWrap">
+                    <div class="rwdT rwdTM rwd">
+                        <div class="overlay"></div>
+                        <img src="./img/ipad.png" alt="ipad">
+                    </div>
+                    <div class="rwdM rwdTM rwd">
+                        <div class="overlay"></div>
+                        <img src="./img/iphone.png" alt="iphone">
+                    </div>
+                </div>
+            </div>
+            <div>
+                
+            </div>
+            <div class="hard"></div>
+            <div class="hard"></div>
+        </div>`
+        $('.portfolioBox').append(book)
+        $('#flipbook').turn({
+            width: $('.room3').width() * 0.85,
+            height: $('.room3').height() * 0.85
+        });
+    }
 
-function h1() {
-    $('#back').animate({
-        marginTop: 0
-    }, 500);
-}
+    // room4
+    if ($(this).hasClass('contact')) {
+        let msg = 
+        `<div class="formBox">
+            <div class="send_message">메일을 보내고 있습니다.</div>
+            <div class="thankyou_message">연락주셔서 감사합니다. 빠른 시일 내에 답변 드리겠습니다 🚀</div>
+            <div class="btn">
+                <button type="submit" class="btn1"><span>보내기</span></button>
+                <input type="reset" value="취소"></input>
+            </div>
+        </div>`
+        $('.formWrap').append(msg)
+        
+        // $('.btn1').on('click', function(){
+        //     $('.send_message').css({display:"block"})
+        //     $.ajax({
+        //         type: "POST",
+        //         url: 'https://script.google.com/macros/s/AKfycbyAihuRIBV2gKYPe6lzrjujfz2agTOmXUAQLBjGTA/exec',          
+        //         success: function() {
+        //             $('.send_message').css({display:"none"})
+        //         },
+        //         error: function() {
+        //             alert('Error occured');
+        //         }
+        //     });
+        // })
+    }
+})
 
-function h2() {
-    $('#back').animate({
-        marginTop: -330
-    }, 500);
-}
+// 닫기
+$('.close').on('click', function(){
+    $(this).parent().removeClass('on')
+    $('.backcolor').remove()
+    if($(this).parent().parent().hasClass('room2')){
+        $('#skill').remove()
+    }
+    if ($(this).parent().parent().hasClass('room3')){
+        $('#flipbook').remove()
+    }
+    if ($(this).parent().parent().hasClass('room4')){
+        $('.formBox').remove()
+    }  
+})
 
-function h3() {
-    $('#back').animate({
-        marginTop: -660
-    }, 500);
-}
+$('.close').hover(
+    function(){
+        $(this).addClass('fa-spin');
+    },
+    function(){
+        $(this).removeClass('fa-spin');
+    }
+);
 
-function root1() {
-    $('#dd1').hide();
-    $('.speech').hide(0);
-    $('#spc11').show(0);
-    $('#zoom').hide(0);
-    $('#zoom').fadeIn(500);
-    $('#zo1').show(0);
-    $('#inv1').animate({
-        width: 105
-    }, 0);
-}
-
-function root2() {
-    $('#dd2').hide();
-    $('#zoom').hide(0);
-    $('#zoom').fadeIn(500);
-    $('#zo2').show(0);
-    $('#inv2').animate({
-        width: 105
-    }, 0);
-}
-
-function root3() {
-    $('#dd3').hide();
-    $('.speech').hide(0);
-    $('#spc21').show(0);
-    $('#zoom').hide(0);
-    $('#zoom').fadeIn(500);
-    $('#zo3').show(0);
-    $('#inv3').animate({
-        width: 105
-    }, 0);
-}
-
-function root4() {
-    $('#dd4').hide();
-    $('#zoom').hide(0);
-    $('#zoom').fadeIn(500);
-    $('#zo4').show(0);
-    $('#inv4').animate({
-        width: 105
-    }, 0);
-}
-
-function root5() {
-    $('#dd5').hide();
-    $('#zoom').hide(0);
-    $('#zoom').fadeIn(500);
-    $('#zo5').show(0);
-    $('#inv5').animate({
-        width: 105
-    }, 0);
-}
-
-function root6() {
-    $('#dd6').hide();
-    $('.speech').hide(0);
-    $('#spc22').show(0);
-    $('#zoom').hide(0);
-    $('#zoom').fadeIn(500);
-    $('#zo6').show(0);
-    $('#inv6').animate({
-        width: 105
-    }, 0);
-}
-
-function root7() {
-    $('#dd7').hide();
-    $('#inv7').animate({
-        width: 105
-    }, 0);
-}
-
-function root8() {
-    $('#dd8').hide();
-    $('#zoom').hide(0);
-    $('#zoom').fadeIn(500);
-    $('#zo8').show(0);
-    $('#inv8').animate({
-        width: 105
-    }, 0);
-}
-
-function root9() {
-    $('#dd9').hide();
-    $('#zoom').hide(0);
-    $('#zoom').fadeIn(500);
-    $('#zo9').show(0);
-    $('#inv9').animate({
-        width: 105
-    }, 0);
-}
-
-
-function ob00() {
-    if ($('#inv9').width() <= 99) {
-        $('.speech').hide(0);
-        $('#spc02').show(0);
-    } else if ($('#inv9').width() >= 100) {
-        $('.speech').hide(0);
-        $('#spc99').show(0);
-        $('#ending').animate({
-            width: 1080
-        }, 3500, ending)
-    } else return;
-}
-
-function ob01() {
-    $('.speech').hide(0);
-    $('#spc03').show(0);
-}
-
-function ob02() {
-    $('.speech').hide(0);
-    $('#spc04').show(0);
-}
-
-function ob03() {
-    if ($('#inv3').width() <= 99) {
-        $('.speech').hide(0);
-        $('#spc05').show(0);
-    } else if ($('#inv3').width() >= 100 && $('#inv8').width() <= 99) {
-        $('.speech').hide(0);
-        $('#spc23').show(0);
-        root8();
-    } else if ($('#inv3').width() >= 100 && $('#inv8').width() >= 100) {
-        $('.speech').hide(0);
-        $('#spc24').show(0);
-    } else return;
-}
-
-function ob04() {
-    if ($('#inv4').width() <= 99) {
-        $('.speech').hide(0);
-        $('#spc06').show(0);
-        root4();
-    } else if ($('#inv4').width() >= 100) {
-        $('.speech').hide(0);
-        $('#spc07').show(0);
-    } else return;
-}
-
-function ob05() {
-    $('.speech').hide(0);
-    $('#spc08').show(0);
-}
-
-function ob06() {
-    if ($('#inv5').width() <= 99) {
-        $('.speech').hide(0);
-        $('#spc09').show(0);
-        root5();
-    } else if ($('#inv5').width() >= 100) {
-        $('.speech').hide(0);
-        $('#spc10').show(0);
-    } else return;
-}
-
-function ob07() {
-    $('.speech').hide(0);
-    $('#spc12').show(0);
-}
-
-function ob08() {
-    if ($('#inv7').width() <= 99) {
-        $('.speech').hide(0);
-        $('#spc13').show(0);
-    } else if ($('#inv7').width() >= 100 && $('#inv2').width() <= 99 && $('#inv9').width() <= 99) {
-        $('.speech').hide(0);
-        $('#spc18').show(0);
-    } else if ($('#inv7').width() >= 100 && $('#inv2').width() >= 100 && $('#inv9').width() <= 99) {
-        $('.speech').hide(0);
-        $('#spc19').show(0);
-        root9();
-    } else if ($('#inv7').width() >= 100 && $('#inv2').width() >= 100 && $('#inv9').width() >= 100) {
-        $('.speech').hide(0);
-        $('#spc20').show(0);
-    } else return;
-}
-
-function ob09() {
-    if ($('#inv1').width() <= 99) {
-        $('.speech').hide(0);
-        $('#spc14').show(0);
-    } else if ($('#inv1').width() >= 100 && $('#inv4').width() <= 99 || $('#inv5').width() <= 99 || $('#inv6').width() <= 99) {
-        $('.speech').hide(0);
-        $('#spc15').show(0);
-    } else if ($('#inv1').width() >= 100 && $('#inv4').width() >= 100 && $('#inv5').width() >= 100 && $('#inv6').width() >= 100 && $('#inv2').width() <= 99) {
-        $('.speech').hide(0);
-        $('#spc16').show(0);
-        root2();
-    } else if ($('#inv1').width() >= 100 && $('#inv4').width() >= 100 && $('#inv5').width() >= 100 && $('#inv6').width() >= 100 && $('#inv2').width() >= 100) {
-        $('.speech').hide(0);
-        $('#spc17').show(0);
-    } else return;
-}
-
-function ob10() {
-    $('.speech').hide(0);
-    $('#spc30').show(0);
-    $('#zoom').hide(0);
-    $('#zoom').fadeIn(500);
-    $('#zo1').show(0);
-}
-
-function ob11() {
-    $('.speech').hide(0);
-    $('#spc31').show(0);
-    $('#zoom').hide(0);
-    $('#zoom').fadeIn(500);
-    $('#zo2').show(0);
-}
-
-function ob12() {
-    $('.speech').hide(0);
-    $('#spc32').show(0);
-    $('#zoom').hide(0);
-    $('#zoom').fadeIn(500);
-    $('#zo3').show(0);
-}
-
-function ob13() {
-    $('.speech').hide(0);
-    $('#spc33').show(0);
-    $('#zoom').hide(0);
-    $('#zoom').fadeIn(500);
-    $('#zo4').show(0);
-}
-
-function ob14() {
-    $('.speech').hide(0);
-    $('#spc34').show(0);
-    $('#zoom').hide(0);
-    $('#zoom').fadeIn(500);
-    $('#zo5').show(0);
-}
-
-function ob15() {
-    $('.speech').hide(0);
-    $('#spc35').show(0);
-    $('#zoom').hide(0);
-    $('#zoom').fadeIn(500);
-    $('#zo6').show(0);
-}
-
-function ob16() {
-    $('.speech').hide(0);
-    $('#spc36').show(0);
-    $('#zoom').hide(0);
-    $('#zoom').fadeIn(500);
-    $('#zo7').show(0);
-}
-
-function ob17() {
-    if ($('#inv7').width() <= 99) {
-        $('.speech').hide(0);
-        $('#spc39').show(0);
-        $('#zoom').hide(0);
-        $('#zoom').fadeIn(500);
-        $('#zo7').show(0);
-        root7();
-    } else if ($('#inv7').width() >= 100) {
-        $('.speech').hide(0);
-        $('#spc37').show(0);
-        $('#zoom').hide(0);
-        $('#zoom').fadeIn(500);
-        $('#zo8').show(0);
-    } else return;
-}
-
-function ob18() {
-    $('.speech').hide(0);
-    $('#spc38').show(0);
-    $('#zoom').hide(0);
-    $('#zoom').fadeIn(500);
-    $('#zo9').show(0);
-}
-
-
-function hint() {
-    $('#hinter').toggle(300);
-}
-
-function hindel() {
-    $('#hinter').hide(300);
-}
-
-function clr0() {
-    $('#zoom').hide(0);
-    $('#zoom > img').hide(0);
-}
-
-function clr1() {
-    $('.speech').hide(0);
-}
-
-function ending() {
-    $('#ending').fadeIn(2000);
-}
+	
