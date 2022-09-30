@@ -1,16 +1,16 @@
 $(window).on('load', function(){
-    var cnt = 0;
-    function addCnt(){
-        cnt++;
-        $('.outer .count').text(cnt+'%').css({
+    // var cnt = 0;
+    // function addCnt(){
+    //     cnt++;
+    //     $('.outer .count').text(cnt+'%').css({
 
-        })
-        if(cnt==100) {
-            clearInterval(cntSet);
+    //     })
+    //     if(cnt==100) {
+    //         clearInterval(cntSet);
             $('.outer').fadeOut(300)
-        }
-    }
-    var cntSet = setInterval(addCnt, 20)
+    //     }
+    // }
+    // var cntSet = setInterval(addCnt, 20)
 })
 
 function tmp() { 
@@ -205,6 +205,7 @@ $('.maparea.portfolio').on('click', function(){
                     <div class="fin"></div>
                     </div>
                 </div>
+                <p><span>페이지를 넘겨주세요 <i class="fa-solid fa-arrow-right"></i></span></p>
             </div>
         </div>
         <div class="hard"></div>
@@ -363,6 +364,9 @@ $('.find').on('click', function(){
 $('.item').on('click', function(){
     if(!$('.item').hasClass('active') && $(this).children().length){
         $(this).addClass('active')
+        if($(this).children().attr('alt')=="note"){
+            
+        }
     }
     else{
         $(this).removeClass('active')

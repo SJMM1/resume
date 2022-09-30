@@ -12,7 +12,7 @@ body {
 }
 
 .room { position: relative; }
-.room img { 
+.room > img { 
     width: 100%;
     height: 100vh;
 }
@@ -178,6 +178,30 @@ h3 {
     background: url('../img/me.jpg') no-repeat 50% 85%; 
     opacity: 0.5;
 }
+.room1 .water {  
+    width: 0.9%;
+    height: 8.1%;
+    top: 44.4%;
+    right: 21.6%;
+    background-color: rgba(133, 197, 226, 0.8);
+}
+.room1 .water::after,
+.room1 .water::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    filter: blur(5px);
+}
+.room1 .water::after { animation: moveWater 1s infinite; }
+.room1 .water::before { animation: moveWater 1s 0.5s infinite; }
+@keyframes moveWater {
+    0% { top: 0; }
+    100% { top: 100%; }
+}
+
 .room1 .aboutBox {
     width: 100%;
     height: 100%;
@@ -267,6 +291,30 @@ h3 {
     }
 }
 
+.room2 .clock {
+    width: 6.8%;
+    height: 8.9%;
+    top: 2.5%;
+    left: 5.5%;
+    border-radius: 50%;
+}
+.room2 .clock::after {
+    content: '';
+    position: absolute;
+    width: 2%;
+    height: 35%;
+    top: 50%;
+    left: 49%;
+    background: brown;
+    transform: rotate(0);
+    transform-origin: left top;
+    animation: clock 60s infinite;
+}
+@keyframes clock {
+    0%{ transform: rotate(0); }
+    100%{ transform: rotate(360deg); }
+}
+
 .room2 .skillBox {
     width: 90%;
     height: 90%;
@@ -278,7 +326,7 @@ h3 {
     padding-top: 5%;
     top: 6.4%;
     left: 50%;
-    width: 80%;
+    width: 55%;
     height: 83.7%;
     transform: translateX(-50%);
     overflow-y: scroll;
@@ -301,6 +349,26 @@ h3 {
 }
 .room3 .portfolio:hover::after { background: rgba(255, 255, 255, 0.5); }
 
+.room3 .clock {
+    width: 6%;
+    height: 8%;
+    top: 11.6%;
+    left: 4.9%;
+    border-radius: 50%;
+}
+.room3 .clock::after {
+    content: '';
+    position: absolute;
+    width: 2%;
+    height: 36%;
+    top: 50%;
+    left: 49%;
+    background: darkblue;
+    transform: rotate(0);
+    transform-origin: left top;
+    animation: clock 60s infinite;
+}
+
 .room3 .portfolioBox .hard { background: #fededf !important; }
 .room3 .portfolioBox .page { background: #fff; }
 .room3 .even { border-right: 2px solid #ddd; }
@@ -315,7 +383,19 @@ h3 {
     height: 100%;
 }
 /* 표지 */
-.room3 .portfolioBox .hard h1 { z-index: 2; }
+.room3 .portfolioBox .hard h1 { 
+    z-index: 2; 
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+.room3 .portfolioBox .hard p {
+    font-size: 25px;
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    margin: 0 20px 20px auto;
+}
 
 /* 소개 */
 .room3 .pageWrap .blockquote { position: relative; }
@@ -493,6 +573,26 @@ h3 {
     50% { font-size: 60px; }
     100% { font-size: 50px; }
 }
+
+.room4 .photo1 {
+    width: 11.5%;
+    top: 20.3%;
+    left: 9.2%;
+}
+.room4 .photo2 {
+    width: 8.5%;
+    top: 25.5%;
+    left: 23%;
+}
+.room4 .photo:hover { animation: shake 1s infinite; }
+@keyframes shake {
+    0% { transform: rotate(-10deg) }
+    50% { transform: rotate(10deg) }
+    100% { transform: rotate(-10deg) }
+}
+/* .room4 .photo { transition: all 0.5s; }
+.room4 .photo1:hover { transform: rotate(-15deg); }
+.room4 .photo2:hover { transform: rotate(15deg); } */
 
 .room4 .contactBox {
     width: 90%;
