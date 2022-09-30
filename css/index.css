@@ -69,6 +69,33 @@ body {
     }
 }
 
+/* 첫화면 */
+.outer { 
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+    background: #000;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    flex-direction: column;
+    color: #f6ac1d;
+    font-size: 40px;
+}
+.walkBox { 
+    background: url('../img/sprtie.png') no-repeat;
+    width: 264px; 
+    height: 256px; 
+    background-position: 0 0;
+    animation: move 2s steps(6) infinite;
+}
+@keyframes move {
+    0% { background-position: 0 0;  }
+    100% { background-position: -1584px 0;  }
+}
+
 /* 팝업창 */
 .backcolor {
     position: fixed;

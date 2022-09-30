@@ -1,3 +1,18 @@
+$(window).on('load', function(){
+    var cnt = 0;
+    function addCnt(){
+        cnt++;
+        $('.outer .count').text(cnt+'%').css({
+
+        })
+        if(cnt==100) {
+            clearInterval(cntSet);
+            $('.outer').delay(300).fadeOut(300)
+        }
+    }
+    var cntSet = setInterval(addCnt, 30)
+})
+
 function tmp() { 
     // container의 가로사이즈(화면가로 * box 개수)
     let con_width = ($(window).outerWidth() - $('.items').width()) * $('.box').length; 
