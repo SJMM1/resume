@@ -7,10 +7,10 @@ $(window).on('load', function(){
         })
         if(cnt==100) {
             clearInterval(cntSet);
-            $('.outer').delay(300).fadeOut(300)
+            $('.outer').fadeOut(300)
         }
     }
-    var cntSet = setInterval(addCnt, 30)
+    var cntSet = setInterval(addCnt, 20)
 })
 
 function tmp() { 
@@ -308,25 +308,63 @@ $('.close').hover(
 
 	
 // 아이템
-$('.key').on('click', function(){
+$('.find').on('click', function(){
     $(this).parent().append(`<div class='back'></div>`)
-    $(this).parent().append(`<div class='pBox'></div>`)
-    let msg = `<p>열쇠를 발견했다.<br><span><닫기></span></p>`
-    $('.pBox').append(msg)
-    $('.itemBox .item1').append(`<img src="./img/key.png" alt="key">`)
-    $('.pBox').on('click', function(){
-        $(this).remove()
-        $('.back').remove() 
-    })
-    $(this).off()
-})
-$('.empty1').on('click', function(){
-    $(this).parent().append(`<div class='back'></div>`)
-    $(this).parent().append(`<div class='pBox'></div>`)
-    let msg = `<p>아무것도 들어있지 않다.<br><span><닫기></span></p>`
-    $('.pBox').append(msg)
-    $('.pBox').on('click', function(){
+    
+    var textBox = 
+    `<div class="textBox">
+        <p></p>
+        <span class="textClose"><닫기></span>
+    </div>`
+    $(this).parent().append(textBox)
+    
+    $('.textBox').on('click', function(){
         $(this).remove()
         $('.back').remove()
     })
+
+    var msg = "";
+    if($(this).hasClass('key')){
+        msg = "열쇠를 발견했다."
+        $('.itemBox .item1').append(`<img src="./img/key.png" alt="key">`) 
+        // 클릭방지
+        $(this).off()
+    }
+    if($(this).hasClass('empty1')){
+        msg = "아무것도 들어있지 않다."
+    }
+    if($(this).hasClass('exit')){
+        msg = "출구인 것 같지만 잠겨있다."
+    }
+    if($(this).hasClass('note')){
+        if($('.item1').hasClass('active')){
+            msg = "열렸다! 서랍 안에서 쪽지를 발견했다."
+            $('.item1 img').remove()
+            $('.item1').removeClass('active')
+            $('.itemBox .item1').append(`<img src="./img/note.png" alt="note">`) 
+            $(this).off()
+        }
+        else{
+            msg = "잠겨있다. 열쇠로 열 수 있을 것 같다."
+        }
+    }
+
+    let index = 0        
+    function typing(){
+        $('.textBox p').append(msg[index++])
+        if(index >= msg.length){
+            index = 0
+            clearInterval(stop)
+        }
+    }
+    var stop = setInterval(typing, 70)
+})
+
+$('.item').on('click', function(){
+    if(!$('.item').hasClass('active') && $(this).children().length){
+        $(this).addClass('active')
+    }
+    else{
+        $(this).removeClass('active')
+    }
 })
