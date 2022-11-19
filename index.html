@@ -32,8 +32,11 @@
                 <div class="maparea about">
                     <span data-tooltip="click!"></span>
                 </div>
-                <div class="maparea water"></div>
-                <div class="maparea find key"></div>
+                <div class="maparea2 window">
+                    <img src="./img/window.png" alt="">
+                </div>
+                <div class="maparea2 water"></div>
+                <div class="maparea find goldkey"></div>
                 <div class="maparea find empty1"></div>
                 <div class="pop aboutBox">
                     <a href="#" class="close">
@@ -58,6 +61,8 @@
                                     LICENSE
                                 </div>
                                 <p>
+                                    <span>2022.10</span>&nbsp;&nbsp;GTQ 포토샵 1급<br>
+                                    <span>2022.10</span>&nbsp;&nbsp;GTQi 일러스트 1급<br>
                                     <span>2022.09</span>&nbsp;&nbsp;웹디자인기능사 필기<br>
                                     <span>2012.12</span>&nbsp;&nbsp;MOS - Word, PowerPoint, Excel<br>
                                     <span>2009.03</span>&nbsp;&nbsp;ITQ - 엑셀, 파워포인트, 한글<br>
@@ -100,6 +105,8 @@
                 </div>
                 <div class="maparea clock"></div>
                 <div class="maparea find exit"></div>
+                <div class="maparea find drawer"></div>
+                <div class="maparea find pass pass1"></div>
                 <div class="pop skillBox">
                     <a href="#" class="close">
                         <i class="fa-solid fa-circle-xmark"></i>
@@ -115,6 +122,7 @@
                     <span data-tooltip="click!"></span>
                 </div>
                 <div class="maparea clock"></div>
+                <div class="maparea find bluekey"></div>
                 <div class="pop portfolioBox">
                     <a href="#" class="close">
                         <i class="fa-solid fa-circle-xmark"></i>
@@ -128,13 +136,14 @@
                 <div class="maparea contact">
                     <span data-tooltip="click!"></span>
                 </div>
-                <div class="maparea photo photo1">
+                <div class="maparea2 photo photo1">
                     <img src="./img/photo1.png" alt="">
                 </div>
-                <div class="maparea photo photo2">
+                <div class="maparea2 photo photo2">
                     <img src="./img/photo2.png" alt="">
                 </div>
                 <div class="maparea find note"></div>
+                <div class="maparea find pass pass2"></div>
                 <div class="pop contactBox">
                     <a href="#" class="close">
                         <i class="fa-solid fa-circle-xmark"></i>
@@ -186,31 +195,73 @@
                     </div>
                 </div>
             </div>
-        </article>
+        </article>   
     </section>
     <div class="items">
         <div>
             <h2 class="center">ITEM</h2>
         </div>
         <div class="itemBox">
-            <div>
-                <div class="item item1"></div>
-                <div class="item item2"></div>
-                <div class="item item3"></div>
-                <div class="item item4"></div>
-            </div>
-            <div>
-                <div class="item item5"></div>
-                <div class="item item6"></div>
-                <div class="item item7"></div>
-                <div class="item item8"></div>
-            </div>
+            <div class="item item1"></div>
+            <div class="item item2"></div>
+            <div class="item item3"></div>
+            <div class="item item4"></div>
+            <div class="item item5"></div>
+            <div class="item item6"></div>
+            <div class="item item7"></div>
+            <div class="item item8"></div>
         </div>
     </div>
     <div class="outer">
-        <div class="walkBox"></div>
-        <div class="count"></div>
+        <div>
+            <div class="walkBox"></div>
+            <div>탈출성공!!!</div>
+        </div>
+        <!-- <div class="count"></div> -->
     </div>
+    
+    <div class="pop itemPop">
+        <a href="#" class="close">
+            <i class="fa-solid fa-circle-xmark"></i>
+        </a>
+    </div>
+    
     <script src="./js/index.js"></script>
+    
+    <style>
+    .inputBox{
+        background-color: #81c3d6;
+        width: 50%;
+        height: 100px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+	input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        appearance: none;
+        margin: 0;
+    }
+
+    input::placeholder {color:#eeefef;}
+    input::-webkit-input-placeholder {color:#eeefef;}
+    input:-ms-input-placeholder {color:#eeefef;}
+    
+    input {
+        width: 50px;
+		height: 50px;
+		line-height: 100%;
+		background-color: transparent;
+		border: 0;
+		outline: 0;
+		color: white;
+		font-size: 50px;
+		word-spacing: 0px;
+		overflow: hidden;
+		text-align: center;
+    }
+    </style>
 </body>
 </html>

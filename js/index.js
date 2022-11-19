@@ -1,17 +1,17 @@
-$(window).on('load', function(){
-    // var cnt = 0;
-    // function addCnt(){
-    //     cnt++;
-    //     $('.outer .count').text(cnt+'%').css({
+// $(window).on('load', function(){
+//     var cnt = 0;
+//     function addCnt(){
+//         cnt++;
+//         $('.outer .count').text(cnt+'%').css({
 
-    //     })
-    //     if(cnt==100) {
-    //         clearInterval(cntSet);
-            $('.outer').fadeOut(300)
-    //     }
-    // }
-    // var cntSet = setInterval(addCnt, 20)
-})
+//         })
+//         if(cnt==100) {
+//             clearInterval(cntSet);
+//             $('.outer').fadeOut(300)
+//         }
+//     }
+//     var cntSet = setInterval(addCnt, 20)
+// })
 
 function tmp() { 
     // container의 가로사이즈(화면가로 * box 개수)
@@ -284,7 +284,7 @@ $('.maparea.contact').on('click', function(){
 })
 
 // 닫기
-$('.close').on('click', function(){
+$('.room .close').on('click', function(){
     $(this).parent().removeClass('on')
     $('.backcolor').remove()
     if($(this).parent().parent().hasClass('room2')){
@@ -297,6 +297,11 @@ $('.close').on('click', function(){
         $('.formBox').remove()
     }  
 })
+$('.itemPop .close').on('click', function(){
+    $(this).parent().removeClass('on')
+    $('.item').removeClass('active')
+    $('.itemPop > div').remove()
+})
 
 $('.close').hover(
     function(){
@@ -307,9 +312,8 @@ $('.close').hover(
     }
 );
 
-	
 // 아이템
-$('.find').on('click', function(){
+$('.find').not('.pass').on('click', function(){
     $(this).parent().append(`<div class='back'></div>`)
     
     var textBox = 
@@ -324,10 +328,10 @@ $('.find').on('click', function(){
         $('.back').remove()
     })
 
-    var msg = "";
-    if($(this).hasClass('key')){
+    let msg = "";
+    if($(this).hasClass('goldkey')){
         msg = "열쇠를 발견했다."
-        $('.itemBox .item1').append(`<img src="./img/key.png" alt="key">`) 
+        $('.itemBox .item1').append(`<img class='goldkeyimg' src="./img/goldkey.png" alt="goldkey">`) 
         // 클릭방지
         $(this).off()
     }
@@ -336,14 +340,42 @@ $('.find').on('click', function(){
     }
     if($(this).hasClass('exit')){
         msg = "출구인 것 같지만 잠겨있다."
+        if($('.silverkeyimg').parent().hasClass('active')){
+            $('.outer').fadeIn(500)
+        }
+        else if($('.goldkeyimg').parent().hasClass('active') || $('.bluekeyimg').parent().hasClass('active')){
+            msg = "맞지 않는 열쇠다."
+        }
+    }
+    if($(this).hasClass('drawer')){
+        msg = "잠겨있다. 열쇠로 열 수 있을 것 같다."
+        if($('.bluekeyimg').parent().hasClass('active')){
+            msg = "열렸다! 핸드폰을 발견했다."
+            $('.item2 img').remove()
+            $('.item2').removeClass('active')
+            $('.itemBox .item2').append(`<img src="./img/phoneoff.png" alt="phone">`) 
+            $(this).off()
+        }
+        else if($('.goldkeyimg').parent().hasClass('active')){
+            msg = "맞지 않는 열쇠다."
+        }
+    }
+    if($(this).hasClass('bluekey')){
+        msg = "열쇠를 발견했다."
+        $('.itemBox .item2').append(`<img class='bluekeyimg' src="./img/bluekey.png" alt="bluekey">`) 
+        // 클릭방지
+        $(this).off()
     }
     if($(this).hasClass('note')){
-        if($('.item1').hasClass('active')){
+        if($('.goldkeyimg').parent().hasClass('active')){
             msg = "열렸다! 서랍 안에서 쪽지를 발견했다."
             $('.item1 img').remove()
             $('.item1').removeClass('active')
             $('.itemBox .item1').append(`<img src="./img/note.png" alt="note">`) 
             $(this).off()
+        }
+        else if($('.bluekeyimg').parent().hasClass('active')){
+            msg = "맞지 않는 열쇠다."
         }
         else{
             msg = "잠겨있다. 열쇠로 열 수 있을 것 같다."
@@ -358,17 +390,309 @@ $('.find').on('click', function(){
             clearInterval(stop)
         }
     }
-    var stop = setInterval(typing, 70)
+    var stop = setInterval(typing, 60)
+
+    $(".item").css("height",$(".item").width()*1.5)
 })
 
-$('.item').on('click', function(){
-    if(!$('.item').hasClass('active') && $(this).children().length){
-        $(this).addClass('active')
-        if($(this).children().attr('alt')=="note"){
-            
-        }
+// 모양비밀번호
+$('.pass1').on('click', function(){
+    $('.itemPop').addClass('on')
+    let pass = 
+    `<div class="passWrap">
+        <div class="passBox">
+            <div>
+                <button class="prev prev1">
+                    <i class="fa-solid fa-caret-up"></i>
+                </button>
+                <div class="pw_img">
+                    <div class="pw_img1">
+                        <img src="./img/moon.png" alt="moon">
+                        <img src="./img/heart.png" alt="heart">
+                        <img src="./img/rec.png" alt="rec">
+                        <img src="./img/clover.png" alt="clover">
+                        <img src="./img/star.png" alt="star">
+                    </div>
+                </div>
+                <button class="next next1">
+                    <i class="fa-solid fa-caret-down"></i>
+                </button>
+            </div>
+            <div>
+                <button class="prev prev2">
+                    <i class="fa-solid fa-caret-up"></i>
+                </button>
+                <div class="pw_img">
+                    <div class="pw_img2">
+                        <img src="./img/moon.png" alt="moon">
+                        <img src="./img/heart.png" alt="heart">
+                        <img src="./img/rec.png" alt="rec">
+                        <img src="./img/clover.png" alt="clover">
+                        <img src="./img/star.png" alt="star">
+                    </div>
+                </div>
+                <button class="next next2">
+                    <i class="fa-solid fa-caret-down"></i>
+                </button>
+            </div>
+            <div>
+                <button class="prev prev3">
+                    <i class="fa-solid fa-caret-up"></i>
+                </button>
+                <div class="pw_img">
+                    <div class="pw_img3">
+                        <img src="./img/moon.png" alt="moon">
+                        <img src="./img/heart.png" alt="heart">
+                        <img src="./img/rec.png" alt="rec">
+                        <img src="./img/clover.png" alt="clover">
+                        <img src="./img/star.png" alt="star">
+                    </div>
+                </div>
+                <button class="next next3">
+                    <i class="fa-solid fa-caret-down"></i>
+                </button>
+            </div>
+            <div>
+                <button class="prev prev4">
+                    <i class="fa-solid fa-caret-up"></i>
+                </button>
+                <div class="pw_img">
+                    <div class="pw_img4">
+                        <img src="./img/moon.png" alt="moon">
+                        <img src="./img/heart.png" alt="heart">
+                        <img src="./img/rec.png" alt="rec">
+                        <img src="./img/clover.png" alt="clover">
+                        <img src="./img/star.png" alt="star">
+                    </div>
+                </div>
+                <button class="next next4">
+                    <i class="fa-solid fa-caret-down"></i>
+                </button>
+            </div>
+        </div>
+    </div>`
+    $('.itemPop').append(pass)
+
+    $(".prev").attr("disabled", true)
+})
+let curPos = [0, 0, 0, 0]
+let posValue = [0, 0, 0, 0]
+const img_h = 182;
+
+$("body").on('click', '.passBox > div .next',function(){
+    let num = $(this).parent().index();
+    if(curPos[num] < 4) {
+        $(this).siblings(".prev").attr("disabled", false)
+        posValue[num] -= img_h;
+        $(this).siblings(".pw_img").children().css("top", posValue[num])
+        curPos[num] += 1;
     }
-    else{
-        $(this).removeClass('active')
+    if(curPos[num] == 4) {
+        $(this).attr("disabled", true)
+    }
+    answer1()
+})
+$("body").on('click', '.passBox > div .prev', function(){
+    let num = $(this).parent().index();
+    if(curPos[num] > 0) {
+        $(this).siblings(".next").attr("disabled", false)
+        posValue[num] += img_h;
+        $(this).siblings(".pw_img").children().css("top", posValue[num])
+        curPos[num] -= 1;
+    }
+    if(curPos[num] == 0) {
+        $(this).attr("disabled", true)
+    }
+    answer1()
+})
+
+function answer1() {
+    if(curPos[0] == 4 && curPos[1] == 3 && curPos[2] == 1 && curPos[3] == 2) {
+        let msg="딸깍! 소리가 나며 잠금이 풀렸다. 안에서 보조배터리를 발견했다."
+        $("body").off('click', '.passBox > div .prev')
+        $("body").off('click', '.passBox > div .next')
+        $('.pass1').off()
+        $('.itemBox .item3').append(`<img src="./img/battery.png" alt="battery">`)
+    
+        let textBox = 
+        `<div class="textBox">
+            <p></p>
+            <span class="textClose"><닫기></span>
+        </div>`
+        $('.itemPop').append(textBox)
+        
+        $('.textBox').on('click', function(){
+            $(this).remove()
+            $('.back').remove()
+        })
+    
+        let index = 0        
+        function typing(){
+            $('.textBox p').append(msg[index++])
+            if(index >= msg.length){
+                index = 0
+                clearInterval(stop)
+            }
+        }
+        var stop = setInterval(typing, 60)
+    }
+}
+
+
+//숫자비밀번호
+$('.pass2').on('click', function(){
+    $('.itemPop').addClass('on')
+    let keyPw = 
+    `<div class="passWrap">
+        <div class="inputBox">
+            <input type="text" maxlength="2" placeholder="•" value="">
+            <input type="text" maxlength="2" placeholder="•" value="">
+            <input type="text" maxlength="2" placeholder="•" value="">
+            <input type="text" maxlength="1" placeholder="•" value="">
+        </div>
+    </div>`
+    $('.itemPop').append(keyPw)
+})
+
+$("body").on('input', '.inputBox', function(){
+    var elements = $(this).children(),
+    str = "";
+    
+    elements.each(function(e){ 
+        var val = $(this).val().replace(/[^0-9]/gi,''),
+        focused = $(this).is(":focus"),
+        parseGate = false;
+
+        val.length==1?parseGate=false:parseGate=true; 
+
+        $(this).val(val);
+
+        if(parseGate&&val.length>1){ 
+            var	exist = elements[e+1]?true:false; 
+            exist&&val[1]?(
+                elements[e+1].disabled=false,
+                elements[e+1].value=val[1], 
+                elements[e].value=val[0], 
+                elements[e+1].focus() 
+            ):void 0;
+        } else if(parseGate&&focused&&val.length==0){ 
+            var exist = elements[e-1]?true:false; 
+            if(exist) elements[e-1].focus(); 
+        }
+        val==""?str+=" ":str+=val;
+    });
+
+    // 정답일때
+    if(str == 13988) {
+        let msg="딸깍! 소리가 나며 잠금이 풀렸다. 안에서 열쇠를 발견했다."
+        $("body").off('input', '.inputBox')
+        $('.pass2').off()
+        $('.itemBox .item4').append(`<img class="silverkeyimg" src="./img/silverkey.png" alt="silverkey">`)
+    
+        let textBox = 
+        `<div class="textBox">
+            <p></p>
+            <span class="textClose"><닫기></span>
+        </div>`
+        $('.itemPop').append(textBox)
+        
+        $('.textBox').on('click', function(){
+            $(this).remove()
+            $('.back').remove()
+        })
+    
+        let index = 0        
+        function typing(){
+            $('.textBox p').append(msg[index++])
+            if(index >= msg.length){
+                index = 0
+                clearInterval(stop)
+            }
+        }
+        var stop = setInterval(typing, 60)
     }
 })
+
+$("body").on('click', '.inputBox', function(e) {
+	var els = $(this).children()
+    els.each(function(){
+		while($(this).prev().val()==""){
+			$(this).prev().focus();
+			$(this) = $(this).prev();
+		}
+	})
+});
+
+
+
+
+
+$('.item').on('click', function(){
+    if($(this).children().length){   
+        if(!$(this).siblings().hasClass('active') || $(this).children().attr('alt')=="battery"){
+            $(this).toggleClass('active')
+        }
+        else if(!$('.itemPop').hasClass('on')){
+            $('.item').removeClass('active')
+            $(this).addClass('active')
+        }
+    }
+    if($(this).children().attr('alt')=="note" && !$(this).siblings().hasClass('active')){
+        $('.itemPop').toggleClass('on')
+        $('.itemPop > div').remove()
+        $('.itemPop').append(`<div class="passWrap"><img src="./img/notePw.png" alt="note"></div>`)
+    }
+    if($(this).children().attr('alt')=="phone" && !$(this).siblings().hasClass('active')){
+        $('.itemPop').toggleClass('on')
+        $('.itemPop > div').remove()
+        if($(this).children().hasClass('on')){
+            var phone = 
+            `<div class="passWrap">
+                <img src="./img/phoneon.png" alt="phoneon">
+            </div>`
+        }
+        else {
+            var phone = 
+            `<div class="passWrap">
+                <img src="./img/phoneoff.png" alt="phoneoff">
+                <div class="chargeBox">
+                    <div class="charge"> 0%</div>
+                </div>
+            </div>`
+        }
+        $('.itemPop').append(phone)       
+    }
+    if($(this).children().attr('alt')=="battery" && $(this).hasClass('active') && $('.passWrap').children().attr('alt')=="phoneoff") {
+        var cnt = 0;
+        function addCnt(){
+            cnt++;
+            $('.charge').text(cnt+'%').css({
+                width: cnt+'%' 
+            });
+            if(cnt==100) {
+                clearInterval(cntSet)
+                setTimeout(function() {
+                    $('.passWrap').remove()
+                    let phone = 
+                    `<div class="passWrap">
+                        <img src="./img/phoneon.png" alt="phoneon">
+                    </div>`
+                    $('.itemPop').append(phone)
+                    $('.item2 img').addClass('on')
+                }, 500);
+            }
+        }
+        var cntSet = setInterval(addCnt, 30)
+    }
+})
+
+$(".itemPop").css({
+    "width":$(".box").width(),
+    "height":$(".box").height()
+})
+
+
+
+
+
+
