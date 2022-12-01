@@ -193,6 +193,40 @@ h3 {
     transform: translate(-50%, -50%);
     width: 80%;
 }
+.itemPop .inputBox{
+    background-color: #81c3d6;
+    width: 50%;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.itemPop input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.itemPop input::placeholder {color:#eeefef;}
+.itemPop input::-webkit-input-placeholder {color:#eeefef;}
+.itemPop input:-ms-input-placeholder {color:#eeefef;}
+
+.itemPop input {
+    width: 50px;
+    height: 50px;
+    line-height: 100%;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    color: white;
+    font-size: 50px;
+    word-spacing: 0px;
+    overflow: hidden;
+    text-align: center;
+}
+
 
 /* 비밀번호 */
 .passBox {

@@ -213,7 +213,7 @@ $('.maparea.portfolio').on('click', function(){
             <div class="pageWrap">
                 <div class="blockquote">
                     <h2 class="center">홍루이젠<br>홈페이지<br>리뉴얼</h2>
-                    <p>홍루이젠 홈페이지의 메인 페이지와<br>서브 페이지(로그인, 회원가입, 메뉴)를<br>리뉴얼했습니다.<br>
+                    <p>홍루이젠 홈페이지의 메인 페이지와<br>서브 페이지(로그인, 회원가입)를<br>리뉴얼했습니다.<br>
                     반응형으로 제작되었습니다.</p>
                 </div>
                 <button class="more_btn" onclick="window.open('https://sjmm1.github.io/hongruizhen/')"><span>Click!</span><span>바로가기</span></button>
@@ -313,6 +313,11 @@ $('.close').hover(
 );
 
 // 아이템
+$('body').on('click', '.textBox', function(){
+    $(this).remove()
+    $('.back').remove()
+})
+
 $('.find').not('.pass').on('click', function(){
     $(this).parent().append(`<div class='back'></div>`)
     
@@ -323,11 +328,6 @@ $('.find').not('.pass').on('click', function(){
     </div>`
     $(this).parent().append(textBox)
     
-    $('.textBox').on('click', function(){
-        $(this).remove()
-        $('.back').remove()
-    })
-
     let msg = "";
     if($(this).hasClass('goldkey')){
         msg = "열쇠를 발견했다."
@@ -341,7 +341,8 @@ $('.find').not('.pass').on('click', function(){
     if($(this).hasClass('exit')){
         msg = "출구인 것 같지만 잠겨있다."
         if($('.silverkeyimg').parent().hasClass('active')){
-            $('.outer').fadeIn(500)
+            msg = "문이 열렸다!"
+            $('.outer').fadeIn(2500)
         }
         else if($('.goldkeyimg').parent().hasClass('active') || $('.bluekeyimg').parent().hasClass('active')){
             msg = "맞지 않는 열쇠다."
@@ -397,6 +398,8 @@ $('.find').not('.pass').on('click', function(){
 
 // 모양비밀번호
 $('.pass1').on('click', function(){
+    curPos = [0, 0, 0, 0]
+    posValue = [0, 0, 0, 0]
     $('.itemPop').addClass('on')
     let pass = 
     `<div class="passWrap">
@@ -596,11 +599,6 @@ $("body").on('input', '.inputBox', function(){
         </div>`
         $('.itemPop').append(textBox)
         
-        $('.textBox').on('click', function(){
-            $(this).remove()
-            $('.back').remove()
-        })
-    
         let index = 0        
         function typing(){
             $('.textBox p').append(msg[index++])
