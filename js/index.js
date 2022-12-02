@@ -13,6 +13,10 @@
 //     var cntSet = setInterval(addCnt, 20)
 // })
 
+$('.game_start').on('click', function(){
+    $('.intro').hide();
+})
+
 function tmp() { 
     // container의 가로사이즈(화면가로 * box 개수)
     let con_width = ($(window).outerWidth() - $('.items').width()) * $('.box').length; 

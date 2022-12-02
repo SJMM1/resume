@@ -72,11 +72,11 @@ body {
     }
 }
 
-/* 첫화면 */
+/* 첫화면, 탈출화면 */
 .outer {
     display: none;
 }
-.outer > div{ 
+.outer > div, .intro > div { 
     position: fixed;
     top: 0; 
     left: 0; 
@@ -89,6 +89,9 @@ body {
     flex-direction: column;
     color: #f6ac1d;
     font-size: 40px;
+}
+.intro p {
+    font-size: 20px;
 }
 .walkBox { 
     background: url('../img/sprtie.png') no-repeat;
