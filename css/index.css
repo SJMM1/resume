@@ -624,43 +624,58 @@ h3 {
     /* 이미지가 백그라운드 이미지보다 위로 올라오게 */
     position: relative;
 }
-.room3 .pageWrap .rwdP { 
+/* 홍루이젠 */
+.room3 .pageWrap .hong_p { 
     position: relative;
     width: 90%; 
 }
-.room3 .pageWrap .rwdTM {
+.room3 .pageWrap .hong_p .overlay {   
+    width: 92%;
+    height: 60%;
+    top: 4%;
+    left: 4%;
+    background: url('../img/hong_p.png') no-repeat;
+}
+
+.room3 .pageWrap .hong_tm {
     position: absolute; 
     top: 50%;
     transform: translateY(-50%); 
 }
-.room3 .pageWrap .rwdT { left: 50px; }
-.room3 .pageWrap .rwdM { right: 50px; }
+.room3 .pageWrap .hong_t { left: 50px; }
+.room3 .pageWrap .hong_m { right: 50px; }
+.room3 .pageWrap .hong_t .overlay {    
+    width: 90.2%;
+    height: 90.2%;
+    top: 3.7%;
+    left: 5%;
+    background: url('../img/hong_t.png') no-repeat;
+}
+.room3 .pageWrap .hong_m .overlay {  
+    width: 87.3%;
+    height: 91.5%;
+    top: 3%;
+    left: 6%;
+    background: url('../img/hong_m.png') no-repeat;
+}
+/* 분실물찾기 */
+.room3 .pageWrap .lost { 
+    position: relative;
+    width: 50%; 
+}
+.room3 .pageWrap .lost_m .overlay {  
+    width: 87.3%;
+    height: 91.5%;
+    top: 3%;
+    left: 6%;
+    background: url('../img/lost_m.png') no-repeat;
+}
+/* 스크롤효과 */
 .room3 .pageWrap .overlay {
     position: absolute;
     background-size: cover !important;
     background-position: top center !important;
     transition: all 2s;
-}
-.room3 .pageWrap .rwdP .overlay {   
-    width: 92%;
-    height: 60%;
-    top: 4%;
-    left: 4%;
-    background: url('../img/pc_ver.png') no-repeat;
-}
-.room3 .pageWrap .rwdT .overlay {    
-    width: 90.2%;
-    height: 90.2%;
-    top: 3.7%;
-    left: 5%;
-    background: url('../img/tab_ver.png') no-repeat;
-}
-.room3 .pageWrap .rwdM .overlay {  
-    width: 87.3%;
-    height: 91.5%;
-    top: 3%;
-    left: 6%;
-    background: url('../img/mo_ver.png') no-repeat;
 }
 .room3 .pageWrap .rwd:hover .overlay { background-position:bottom center !important; }
 

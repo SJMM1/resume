@@ -55,7 +55,7 @@ $('.box').on('mousewheel DOMMouseScroll', function(){
             // 휠 방향 감지(아래: -120, 위: 120)
             let w_delta = event.wheelDelta / 120;
             
-            // 휠 아래로s
+            // 휠 아래로
             if(w_delta < 0 && $(this).next().length > 0) {
                 $('.container').animate({
                     left: -$(this).width() * ($(this).index()+1)
@@ -225,7 +225,7 @@ $('.maparea.portfolio').on('click', function(){
         </div>
         <div>
             <div class="pageWrap">
-                <div class="rwdP rwd">
+                <div class="rwd hong_p">
                     <div class="overlay"></div>
                     <img src="./img/imac.png" alt="imac">
                 </div>   
@@ -233,19 +233,35 @@ $('.maparea.portfolio').on('click', function(){
         </div>
         <div>
             <div class="pageWrap">
-                <div class="rwdT rwdTM rwd">
+                <div class="rwd hong_tm hong_t">
                     <div class="overlay"></div>
                     <img src="./img/ipad.png" alt="ipad">
                 </div>
-                <div class="rwdM rwdTM rwd">
+                <div class="rwd hong_tm hong_m">
                     <div class="overlay"></div>
                     <img src="./img/iphone.png" alt="iphone">
                 </div>
             </div>
         </div>
         <div>
-            
+            <div class="pageWrap">
+                <div class="blockquote">
+                    <h2 class="center">분실물 찾기</h2>
+                    <p>공공 API를 활용하여 실시간으로<br>습득물 현황을 볼 수 있습니다.<br>
+                    모바일용으로 제작되었습니다.</p>
+                </div>
+                <button class="more_btn" onclick="window.open('https://sjmm1.github.io/lost/')"><span>Click!</span><span>바로가기</span></button>
+            </div>
         </div>
+        <div>
+            <div class="pageWrap">
+                <div class="rwd lost lost_m">
+                    <div class="overlay"></div>
+                    <img src="./img/iphone.png" alt="iphone">
+                </div>   
+            </div>
+        </div>
+        <div></div>
         <div class="hard"></div>
         <div class="hard"></div>
     </div>`
